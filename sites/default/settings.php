@@ -178,14 +178,21 @@
  *   );
  * @endcode
  */
-$databases['default']['default'] = array(
-  'driver' => 'mysql',
-  'database' => 'OPENSHIFT_APP_NAME',
-  'username' => 'OPENSHIFT_MYSQL_DB_USERNAME',
-  'password' => 'OPENSHIFT_MYSQL_DB_PASSWORD',
-  'host' => 'OPENSHIFT_MYSQL_DB_HOST',
-  'port' => 'OPENSHIFT_MYSQL_DB_PORT',
- );
+  $databases = array (
+    'default' =>
+    array (
+      'default' =>
+      array (
+        'database' => getenv('OPENSHIFT_APP_NAME'),
+        'username' => getenv('OPENSHIFT_MYSQL_DB_USERNAME'),
+        'password' => getenv('OPENSHIFT_MYSQL_DB_PASSWORD'),
+        'host' => getenv('OPENSHIFT_MYSQL_DB_HOST'),
+        'port' => getenv('OPENSHIFT_MYSQL_DB_PORT'),
+        'driver' => 'mysql',
+        'prefix' => '',
+      ),
+    ),
+  );
 
 /**
  * Access control for update.php script.
