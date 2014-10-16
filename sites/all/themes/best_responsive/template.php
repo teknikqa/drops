@@ -91,6 +91,12 @@ function best_responsive_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'full' && node_is_page($variables['node'])) {
     $variables['classes_array'][] = 'node-full';
   }
+  if ($variables['view_mode'] != 'rss') {
+    if ($variables['type'] == 'blog' && (arg(0) != 'blog' || arg(1) != $variables['uid'])) {
+      unset($variables['content']['links']['blog']['#links']['blog_usernames_blog']);
+      unset($variables['content']['links']['node']['#links']['node-readmore']);
+    }
+  }
   $variables['date'] = t('!datetime', array('!datetime' =>  date('j F Y', $variables['created'])));
 }
 
