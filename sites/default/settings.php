@@ -180,7 +180,7 @@
  */
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'drops',
+  'database' => 'OPENSHIFT_APP_NAME',
   'username' => 'OPENSHIFT_MYSQL_DB_USERNAME',
   'password' => 'OPENSHIFT_MYSQL_DB_PASSWORD',
   'host' => 'OPENSHIFT_MYSQL_DB_HOST',
