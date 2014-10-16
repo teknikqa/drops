@@ -184,7 +184,7 @@ $databases['default']['default'] = array(
   'username' => 'OPENSHIFT_MYSQL_DB_USERNAME',
   'password' => 'OPENSHIFT_MYSQL_DB_PASSWORD',
   'host' => 'OPENSHIFT_MYSQLDB_DB_HOST',
-  'port' => OPENSHIFT_MYSQLDB_DB_PORT,
+  'port' => 'OPENSHIFT_MYSQLDB_DB_PORT',
  );
 
 /**
