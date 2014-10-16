@@ -1,0 +1,36 @@
+body {
+  font-family: "Cantarell","Helvetica Neue",Helvetica,Arial,Geneva,sans-serif;
+  font-size: 100%;
+}
+
+header, #header, h1, h2, h3, h4, h5, h6 {
+  font-family: "Crimson Text",Georgia,serif;
+}
+
+pre, code, kbd, samp, tt {
+  font-family: "Droid Sans Mono",Courier,"Courier New",monospace;
+}
+
+.field-name-taxonomy-vocabulary-1 {
+  background: url("../images/icons/tag_blue.png") no-repeat scroll left 40% transparent;
+  padding-left: 20px;
+}
+
+#block-menu-primary-links {
+  float:left;
+}
+
+#html5-logo {
+  position:absolute;
+  right:0;
+}
+
+#html5-logo a {
+  float: left;
+  text-align: center;
+  width:auto;
+}
+
+#html5-logo img {
+  display: inline;
+}

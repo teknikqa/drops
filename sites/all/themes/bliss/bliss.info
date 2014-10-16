@@ -1,0 +1,40 @@
+name = Bliss
+description = Bliss is a subtheme of the Sky theme
+core = 7.x
+base theme = sky
+version = 7.x-1.0
+
+; REGIONS
+;-------------------------------------------------------------------------------
+regions[page_top] = Page Top
+regions[header] = Header
+regions[navigation] = Navigation
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
+regions[footer] = Footer
+regions[copyright] = Copyright
+regions[collapsible] = Collapsible
+regions[page_bottom] = Page Bottom
+
+
+; STYLESHEETS
+;-------------------------------------------------------------------------------
+; Added on Jan 18 2010
+stylesheets[all][] = css/custom.css
+
+; SCRIPTS
+;-------------------------------------------------------------------------------
+;scripts[] = js/scripts.js
+
+; FEATURES
+;-------------------------------------------------------------------------------
+features[] = logo
+features[] = favicon
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
