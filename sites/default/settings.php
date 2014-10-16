@@ -183,8 +183,8 @@ $databases['default']['default'] = array(
   'database' => 'drops',
   'username' => 'OPENSHIFT_MYSQL_DB_USERNAME',
   'password' => 'OPENSHIFT_MYSQL_DB_PASSWORD',
-  'host' => 'OPENSHIFT_MYSQLDB_DB_HOST',
-  'port' => 'OPENSHIFT_MYSQLDB_DB_PORT',
+  'host' => 'OPENSHIFT_MYSQL_DB_HOST',
+  'port' => 'OPENSHIFT_MYSQL_DB_PORT',
  );
 
 /**
