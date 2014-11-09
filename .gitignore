@@ -1,2 +1,9 @@
-sites/default/files
+# Ignore configuration files that may contain sensitive information.
+sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+
+#Ignore Acquia Drupal Dev Desktop created files
 sites/drops.local
