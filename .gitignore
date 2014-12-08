@@ -7,3 +7,7 @@ sites/*/private
 
 #Ignore Acquia Drupal Dev Desktop created files
 sites/drops.local
+
+sites/default/settings.php
+sites/default/default.settings.php
+
