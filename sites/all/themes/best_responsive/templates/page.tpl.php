@@ -67,25 +67,25 @@
 <div id="wrap" class="clearfix">
   <div id="header-wrap">
     <?php if (theme_get_setting('socialicon_display', 'best_responsive')): ?>
-    <?php 
-    $twitter_url = check_plain(theme_get_setting('twitter_url', 'best_responsive')); 
-    $facebook_url = check_plain(theme_get_setting('facebook_url', 'best_responsive')); 
-    $google_plus_url = check_plain(theme_get_setting('google_plus_url', 'best_responsive')); 
+    <?php
+    $twitter_url = check_plain(theme_get_setting('twitter_url', 'best_responsive'));
+    $facebook_url = check_plain(theme_get_setting('facebook_url', 'best_responsive'));
+    $google_plus_url = check_plain(theme_get_setting('google_plus_url', 'best_responsive'));
     $pinterest_url = check_plain(theme_get_setting('pinterest_url', 'best_responsive'));
     ?>
     <div id="pre-header" class="clearfix">
       <ul id="header-social" class="clearfix">
         <?php if ($facebook_url): ?><li>
-          <a target="_blank" title="<?php print $site_name; ?> in Facebook" href="<?php print $facebook_url; ?>"><img alt="Facebook" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/facebook.png'; ?>"> </a>
+          <a target="_blank" title="<?php print $site_name; ?> in Facebook" href="<?php print $facebook_url; ?>"><img alt="Facebook" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/facebook.png'; ?>" rel="me"> </a>
         </li><?php endif; ?>
         <?php if ($twitter_url): ?><li>
-          <a target="_blank" title="<?php print $site_name; ?> in Twitter" href="<?php print $twitter_url; ?>"><img alt="Twitter" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/twitter.png'; ?>"> </a>
+          <a target="_blank" title="<?php print $site_name; ?> in Twitter" href="<?php print $twitter_url; ?>"><img alt="Twitter" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/twitter.png'; ?>" rel="me"> </a>
         </li><?php endif; ?>
         <?php if ($google_plus_url): ?><li>
-          <a target="_blank" title="<?php print $site_name; ?> in Google+" href="<?php print $google_plus_url; ?>"><img alt="Google+" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/google.png'; ?>"> </a>
+          <a target="_blank" title="<?php print $site_name; ?> in Google+" href="<?php print $google_plus_url; ?>"><img alt="Google+" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/google.png'; ?>" rel="me"> </a>
         </li><?php endif; ?>
         <?php if ($pinterest_url): ?><li>
-          <a target="_blank" title="<?php print $site_name; ?> in Pinterest" href="<?php print $pinterest_url; ?>"><img alt="Pinterest" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/pinterest.png'; ?>"> </a>
+          <a target="_blank" title="<?php print $site_name; ?> in Pinterest" href="<?php print $pinterest_url; ?>"><img alt="Pinterest" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/pinterest.png'; ?>" rel="me"> </a>
         </li><?php endif; ?>
         <li>
           <a target="_blank" title="<?php print $site_name; ?> in RSS" href="<?php print $front_page; ?>rss.xml"><img alt="RSS" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/rss.png'; ?>"> </a>
@@ -104,7 +104,7 @@
       </div>
       <nav id="navigation" role="navigation">
         <div id="main-menu">
-          <?php 
+          <?php
             if (module_exists('i18n_menu')) {
               $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
             } else {
@@ -175,7 +175,7 @@
       <?php if ($page['sidebar_first']): ?>
         <aside id="sidebar" role="complementary">
          <?php print render($page['sidebar_first']); ?>
-        </aside> 
+        </aside>
       <?php endif; ?>
     </div>
 
@@ -199,7 +199,7 @@
         </div>
         <div class="clear"></div>
       <?php endif; ?>
-      
+
       <?php print render($page['footer']); ?>
     </div>
   </footer>
