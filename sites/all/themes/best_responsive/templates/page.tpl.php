@@ -76,16 +76,16 @@
     <div id="pre-header" class="clearfix">
       <ul id="header-social" class="clearfix">
         <?php if ($facebook_url): ?><li>
-          <a target="_blank" title="<?php print $site_name; ?> in Facebook" href="<?php print $facebook_url; ?>"><img alt="Facebook" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/facebook.png'; ?>" rel="me"> </a>
+          <a target="_blank" title="<?php print $site_name; ?> in Facebook" href="<?php print $facebook_url; ?>" rel="me"><img alt="Facebook" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/facebook.png'; ?>"> </a>
         </li><?php endif; ?>
         <?php if ($twitter_url): ?><li>
-          <a target="_blank" title="<?php print $site_name; ?> in Twitter" href="<?php print $twitter_url; ?>"><img alt="Twitter" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/twitter.png'; ?>" rel="me"> </a>
+          <a target="_blank" title="<?php print $site_name; ?> in Twitter" href="<?php print $twitter_url; ?>" rel="me"><img alt="Twitter" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/twitter.png'; ?>"> </a>
         </li><?php endif; ?>
         <?php if ($google_plus_url): ?><li>
-          <a target="_blank" title="<?php print $site_name; ?> in Google+" href="<?php print $google_plus_url; ?>"><img alt="Google+" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/google.png'; ?>" rel="me"> </a>
+          <a target="_blank" title="<?php print $site_name; ?> in Google+" href="<?php print $google_plus_url; ?>" rel="me"><img alt="Google+" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/google.png'; ?>"> </a>
         </li><?php endif; ?>
         <?php if ($pinterest_url): ?><li>
-          <a target="_blank" title="<?php print $site_name; ?> in Pinterest" href="<?php print $pinterest_url; ?>"><img alt="Pinterest" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/pinterest.png'; ?>" rel="me"> </a>
+          <a target="_blank" title="<?php print $site_name; ?> in Pinterest" href="<?php print $pinterest_url; ?>" rel="me"><img alt="Pinterest" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/pinterest.png'; ?>"> </a>
         </li><?php endif; ?>
         <li>
           <a target="_blank" title="<?php print $site_name; ?> in RSS" href="<?php print $front_page; ?>rss.xml"><img alt="RSS" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/rss.png'; ?>"> </a>
