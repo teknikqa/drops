@@ -120,13 +120,13 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="site-heading">
             <h1><?php print $title ? $title : $site_name; ?></h1>
-            <?php if (!$title): ?>
-              <hr class="small">
-              <span class="subheading">
+            <?php if ($is_front): ?>
               <?php if ($site_slogan): ?>
-                <?php print $site_slogan; ?>
+                <hr class="small">
+                <span class="subheading">
+                  <?php print $site_slogan; ?>
+                </span>
               <?php endif; ?>
-            </span>
             <?php endif; ?>
           </div>
         </div>
