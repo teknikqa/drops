@@ -150,4 +150,4 @@ DirectoryIndex index.php index.html index.htm
 
 
 #Aditional PHP values
-php_value apc.rfc1867 = 1
+php_value apc.rfc1867 "1"
