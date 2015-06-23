@@ -281,7 +281,7 @@ $drupal_hash_salt = 'cdf26213a150dc3ecb610f18f6b38b46';
  * for you.
  */
 # $base_url = 'http://www.example.com';  // NO trailing slash!
-$base_url = 'https://www.nm7.org'
+$base_url = 'https://www.nm7.org';
 
 /**
  * PHP settings:
