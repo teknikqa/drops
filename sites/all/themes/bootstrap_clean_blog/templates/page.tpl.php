@@ -111,22 +111,20 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="post-heading">
             <h1><?php print $title; ?></h1>
-            <?php if ($display_submitted): ?>
-              <span class="meta"><?php print $submitted; ?></span>
-            <?php endif; ?>
+            <span class="meta"><?php print $submitted; ?></span>
           </div>
         </div>
       <?php else: ?>
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="site-heading">
             <h1><?php print $title ? $title : $site_name; ?></h1>
-            <?php if ($is_front): ?>
+            <?php if (!$title): ?>
+              <hr class="small">
+              <span class="subheading">
               <?php if ($site_slogan): ?>
-                <hr class="small">
-                <span class="subheading">
-                  <?php print $site_slogan; ?>
-                </span>
+                <?php print $site_slogan; ?>
               <?php endif; ?>
+            </span>
             <?php endif; ?>
           </div>
         </div>
@@ -163,19 +161,19 @@
         <ul class="list-inline text-center">
           <li>
             <a target="_blank"
-               href="<?php print theme_get_setting('social_facebook'); ?>">
+               href="<?php print theme_get_setting('social_twitter'); ?>">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
               </span>
             </a>
           </li>
           <li>
             <a target="_blank"
-               href="<?php print theme_get_setting('social_twitter'); ?>">
+               href="<?php print theme_get_setting('social_facebook'); ?>">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
               </span>
             </a>
           </li>
