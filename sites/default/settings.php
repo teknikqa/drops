@@ -605,7 +605,7 @@ if (isset($_SERVER['HTTP_CF_CONNECTING_IP'])) {
 
 # Load the fast_404.inc file. This is needed if you wish to do extension
 # checking in settings.php.
-include_once('./sites/all/modules/fast_404/fast_404.inc');
+include_once('./sites/all/modules/contrib/fast_404/fast_404.inc');
 
 # Disallowed extensions. Any extension in here will not be served by Drupal and
 # will get a fast 404.
