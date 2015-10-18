@@ -538,7 +538,7 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * above. Make sure that you understand the effects of this feature before
  * uncommenting the line below.
  */
-# drupal_fast_404();
+drupal_fast_404();
 
 /**
  * External access proxy settings:
@@ -678,13 +678,16 @@ $conf['fast_404_whitelist'] = array('index.php', 'rss.xml', 'install.php', 'cron
 #$conf['fast_404_string_whitelisting'] = array('cdn/farfuture', '/advagg_');
 $conf['fast_404_string_whitelisting'] = array('/advagg_');
 
-# By default we will show a super plain 404, because usually errors like this are shown to browsers who only look at the headers.
-# However, some cases (usually when checking paths for Drupal pages) you may want to show a regular 404 error. In this case you can
-# specify a URL to another page and it will be read and displayed (it can't be redirected to because we have to give a 30x header to
-# do that. This page needs to be in your docroot.
+# By default we will show a super plain 404, because usually errors like this
+# are shown to browsers who only look at the headers. However, some cases
+# (usually when checking paths for Drupal pages) you may want to show a regular
+# 404 error. In this case you can specify a URL to another page and it will be
+# read and displayed (it can't be redirected to because we have to give a 30x
+# header to do that. This page needs to be in your docroot.
 #$conf['fast_404_HTML_error_page'] = './my_page.html';
 
-# By default the custom 404 page is only loaded for path checking. Load it for all 404s with the below option set to TRUE
+# By default the custom 404 page is only loaded for path checking. Load it for
+# all 404s with the below option set to TRUE
 $conf['fast_404_HTML_error_all_paths'] = FALSE;
 
 # Call the extension checking now. This will skip any logging of 404s.
