@@ -111,7 +111,9 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="post-heading">
             <h1><?php print $title; ?></h1>
+            <?php if ($display_submitted): ?>
             <span class="meta"><?php print $submitted; ?></span>
+            <?php endif; ?>
           </div>
         </div>
       <?php else: ?>

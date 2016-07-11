@@ -1,9 +1,11 @@
+.site-heading h1 {
+  word-wrap: break-word;
+}
 .post-preview .post-subtitle {
   margin: 0;
   font-weight: 300;
   margin-bottom: 10px;
 }
-
 .navbar-default .navbar-nav > .active > a {
   color: #fff;
   background-color: transparent;

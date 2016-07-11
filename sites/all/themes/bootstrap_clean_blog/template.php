@@ -61,6 +61,8 @@ function bootstrap_clean_blog_preprocess_page(&$variables) {
       '!datetime' => format_date($node->created),
     ));
 
+    $variables['display_submitted'] = (bool) variable_get('node_submitted_' . $node->type, TRUE);
+
     $field_header = theme_get_setting('header_image');
 
     if (isset($node->{$field_header}[LANGUAGE_NONE][0]['uri'])) {
