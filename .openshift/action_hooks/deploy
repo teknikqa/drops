@@ -7,13 +7,3 @@ fi
 rm -rf $OPENSHIFT_REPO_DIR/sites/default/files
 
 ln -sf ${OPENSHIFT_DATA_DIR}files ${OPENSHIFT_REPO_DIR}sites/default/
-
-
-DRUPAL_SITE_DIR=${OPENSHIFT_REPO_DIR}sites
-
-for site in ${DRUPAL_SITE_DIR}/*; do
-  if [ -f ${site}/settings.php ]; then
-    rm ${site}/settings.php
-    rm ${site}/default.settings.php
-  fi
-done
