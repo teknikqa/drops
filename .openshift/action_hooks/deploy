@@ -13,6 +13,7 @@ DRUPAL_SITE_DIR=${OPENSHIFT_REPO_DIR}sites
 
 for site in ${DRUPAL_SITE_DIR}/*; do
   if [ -f ${site}/settings.php ]; then
-    chmod u+w ${site}/settings.php
+    rm ${site}/settings.php
+    rm ${site}/default.settings.php
   fi
 done
