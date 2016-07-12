@@ -1,0 +1,8 @@
++++
+date = "2009-07-13T02:46:00+03:00"
+draft = true
+title = "Happy Birthday three-point seatbelt!"
+
++++
+
+The ubiquitous three-point seatbelt turns 50! Here’s a video of the history of the seatbelt. <object height="340" width="560"><param name="movie" value="http://www.youtube.com/v/xQFrBX84RVY&amp;hl=en&amp;fs=1&amp;"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed allowfullscreen="true" allowscriptaccess="always" height="340" src="http://www.youtube.com/v/xQFrBX84RVY&amp;hl=en&amp;fs=1&amp;" type="application/x-shockwave-flash" width="560"></embed></object> Here’s to saving more lives!

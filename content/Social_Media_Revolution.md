@@ -1,0 +1,8 @@
++++
+date = "2009-08-16T15:39:00+03:00"
+draft = true
+title = "Social Media Revolution"
+
++++
+
+<object height="505" width="853"><param name="movie" value="//www.youtube.com/v/sIFYPQjYhv8&amp;hl=en&amp;fs=1&amp;hd=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed allowfullscreen="true" allowscriptaccess="always" height="505" src="//www.youtube.com/v/sIFYPQjYhv8&amp;hl=en&amp;fs=1&amp;hd=1" type="application/x-shockwave-flash" width="853"></embed></object>
