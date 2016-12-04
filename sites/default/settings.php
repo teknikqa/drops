@@ -256,6 +256,8 @@ $databases = array (
        'port' => getenv('OPENSHIFT_MYSQL_DB_PORT'),
        'driver' => 'mysql',
        'prefix' => '',
+       'charset' => 'utf8mb4',
+       'collation' => 'utf8mb4_general_ci',
      ),
    ),
  );
