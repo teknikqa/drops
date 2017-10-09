@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - open source</title>
+ <link>https://www.nm7.org/tags/open-source</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Cloud Computing and Free Software</title>
+ <link>https://www.nm7.org/cloud-computing-and-free-software</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;Over at O&#039;Reilly Radar, Andy Oram tackles the possiblities of a free software cloud.&lt;/p&gt;
+&lt;p&gt;I like how he defines &#039;cloud computing&#039; as evolved from the concepts of time sharing and remote backup. &lt;a href=&quot;#cite_note-0&quot; name=&quot;cite_ref-0&quot; id=&quot;cite_ref-0&quot;&gt;[1]&lt;/a&gt; It does make sense.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;cite_ref-0&quot; name=&quot;#cite_note-0&quot; id=&quot;#cite_note-0&quot;&gt;[1]&lt;/a&gt;Oram, Andy (December 15, 2010). &lt;a href=&quot;http://www.webcitation.org/5v6SbZcXU&quot;&gt;Defining clouds, web services, and other remote computing&lt;/a&gt;. O&#039;Reilly Radar. Archived from &lt;a href=&quot;http://radar.oreilly.com/2010/12/what-are-the-chances-for-a-fre-1.html&quot;&gt;the original&lt;/a&gt; on 2010-12-19. Retrieved: 2010-12-19.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/open-source&quot;&gt;open source&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/cloud-computing&quot;&gt;cloud computing&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Sun, 19 Dec 2010 23:09:21 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">33 at https://www.nm7.org</guid>
+</item>
+<item>
+ <title>Drupal Tutorial - resource</title>
+ <link>https://www.nm7.org/drupal-tutorial-resource</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	A really good resource for anyone who is using Drupal to build websites.&lt;/p&gt;
+&lt;p&gt;
+	Reference: &lt;a href=&quot;http://www.ibm.com/developerworks/ibm/osource/implement.html&quot; target=&quot;_blank&quot; title=&quot;Using open source software to design, develop, and deploy a collaborative Web site&quot;&gt;http://www.ibm.com/developerworks/ibm/osource/implement.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/cms&quot;&gt;cms&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/drupal&quot;&gt;drupal&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/open-source&quot;&gt;open source&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/taxonomy/term/18&quot;&gt;website&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Fri, 06 Feb 2009 14:20:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">8 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

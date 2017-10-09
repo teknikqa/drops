@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - firefox</title>
+ <link>https://www.nm7.org/tags/firefox</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>HOW TO: Use personal Bit.ly account with UrlbarExt</title>
+ <link>https://www.nm7.org/how-use-personal-bit-ly-account-urlbarext</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/8758&quot; target=&quot;_self&quot; title=&quot;: Add-ons for Firefox&quot;&gt;UrlbarExt&lt;/a&gt; is a wonderful add-on for Firefox. It provides useful tools from within the address bar of Firefox.&lt;/p&gt;
+&lt;p class=&quot;rtecenter&quot;&gt;
+	&lt;img alt=&quot;UrlBarExt&quot; height=&quot;36&quot; src=&quot;http://nm7.org/sites/default/files/images/08/23/2010%20-%2010%3A51/UrlBarExt.png&quot; title=&quot;UrlBarExt&quot; width=&quot;201&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;
+	To quote,&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;
+	UrlbarExt extends the Location Bar with set of commands to (Make Tiny URL,Copy URL,Search site,Go up,Tag pages easily ,Navigate through sequential URL&#039;s,View page cached version,Unblock filtered websites and Surf anonymously using online phproxy servers).&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;
+	This helps to shave a few key strokes from repetitive tasks. Like, copying an URL, searching a site, creating a tiny URL for a link, etc. This is one add-on that is highly recommended for power users. I use bit.ly to create tiny URL&#039;s. bit.ly provides statistics for each short URL. This makes for great info. However, the default bit.ly URL shortener in UrlbarExt does not save this to your account. Follow these steps to use your bit.ly account with UrlbarExt.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Go to Tools -&amp;gt; Add-ons.&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Find the UrlbarExt add-on and click on options.&lt;/li&gt;
+&lt;/ul&gt;&lt;p class=&quot;rtecenter&quot;&gt;
+	&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;img alt=&quot;Firefox Addons&quot; height=&quot;383&quot; src=&quot;http://nm7.org/sites/default/files/images/08/23/2010%20-%2011%3A18/firefox_Addons.png&quot; title=&quot;Firefox Addons&quot; width=&quot;521&quot; /&gt;&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Click on the Tiny tab (the second tab from left).&lt;/li&gt;
+&lt;/ul&gt;&lt;p class=&quot;rtecenter&quot;&gt;
+	&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;img alt=&quot;UrlbarExt Options&quot; height=&quot;569&quot; src=&quot;http://nm7.org/sites/default/files/images/08/23/2010%20-%2011%3A19/UrlbarExt_Options.png&quot; title=&quot;UrlbarExt Options&quot; width=&quot;637&quot; /&gt;&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Add a new service by clicking on the + symbol. This will create a new url shortening service. Change the caption to whatever you like.&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Enter the following into the api column.&lt;br /&gt;&lt;code&gt;http://api.bit.ly/shorten&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Enter the following into the Arguments column:&lt;br /&gt;&lt;code&gt;version=2.0.1&amp;amp;longUrl=%?url%&amp;amp;login=&lt;strong&gt;user_id&lt;/strong&gt;&amp;amp;apiKey=&lt;strong&gt;api_key&lt;/strong&gt;&amp;amp;history=1&amp;amp;format=xml&lt;/code&gt;
+&lt;p&gt;		Replace &lt;strong&gt;user_id&lt;/strong&gt; with your username and &lt;strong&gt;api_key&lt;/strong&gt; with your bit.ly api key. (You can get a bit.ly api key at &lt;a href=&quot;http://bit.ly/account/&quot; target=&quot;_self&quot; title=&quot;bit.ly account settings&quot;&gt;http://bit.ly/account&lt;/a&gt;). &lt;em&gt;&lt;strong&gt;Update:&lt;/strong&gt; Replace these terms in the string above.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Enter the following into the Filter column:&lt;br /&gt;&lt;code&gt;&amp;lt;shortUrl&amp;gt;(.+)&amp;lt;\/shortUrl&amp;gt;&lt;/code&gt;
+&lt;p&gt;		This will filter the output and return the shortened url to the address bar.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Make sure to select this new service by clicking the radio button in the # column.&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Click OK and you&#039;re set.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;
+	In short, this is what I&#039;ve done. Using the 2.0.1 version of the api, I&#039;ve given a long URL to bit.ly and asked it to shorten the URL. bit.ly will then return the result in xml format. The shortened URL is listed within the &amp;lt;shortUrl&amp;gt; tag. Filter the resulting xml for this tag and we get the short URL.&lt;/p&gt;
+&lt;h6&gt;
+	Reference: bit.ly api documentation at &lt;a href=&quot;http://bit.ly/s8BO&quot; target=&quot;_self&quot; title=&quot;ApiDocumentation - bit.ly api&quot;&gt;http://bit.ly/s8BO&lt;/a&gt;.&lt;/h6&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/firefox&quot;&gt;firefox&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/addons&quot;&gt;addons&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/bit-ly&quot;&gt;bit.ly&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/taxonomy/term/48&quot;&gt;url shortening&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/taxonomy/term/49&quot;&gt;urlbarext&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Thu, 23 Jul 2009 17:27:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">19 at https://www.nm7.org</guid>
+</item>
+<item>
+ <title>Firefox 3.5 is here!</title>
+ <link>https://www.nm7.org/firefox-3-5-here</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	Firefox has been updated to version 3.5. This version boasts of a few cool features, such as HTML5 Support and Geo-location.&lt;br /&gt;
+	Get more details at &lt;a href=&quot;http://www.mozilla.com/en-US/firefox/3.5/releasenotes/&quot; target=&quot;_self&quot; title=&quot;Top 10 Firefox 3.5 Features&quot;&gt;http://lifehacker.com/5295655/top-10-firefox-35-features&lt;/a&gt;&lt;a href=&quot;http://www.mozilla.com/en-US/firefox/3.5/releasenotes/&quot; target=&quot;_self&quot; title=&quot;What&#039;s new in Firefox 3.5&quot;&gt;&lt;br /&gt;
+	http://www.mozilla.com/en-US/firefox/3.5/releasenotes/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+	Check out this video of what HTML5 can do. &lt;a href=&quot;http://hacks.mozilla.org/2009/06/connecting-html5-video/&quot; target=&quot;_self&quot; title=&quot;Connecting HTML5 video to the web&quot;&gt;http://hacks.mozilla.org/2009/06/connecting-html5-video/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+	Of course, a version upgrade is never complete without breaking something. My upgrade listed the following extensions as incompatible. Hopefully, these extensions will get upgraded soon.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/4111&quot; target=&quot;_self&quot; title=&quot;Aardvark&quot;&gt;Aardvark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/11036&quot; target=&quot;_self&quot; title=&quot;Current Site IP&quot;&gt;Current Site IP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/8381&quot; target=&quot;_self&quot; title=&quot;Evernote&quot;&gt;Evernote Web Clipper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/8538&quot; target=&quot;_self&quot; title=&quot;Feedly&quot;&gt;feedly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		Google Gears&lt;/li&gt;
+&lt;li&gt;
+		Google Notebook&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/446&quot; target=&quot;_self&quot; title=&quot;MediaPlayerConnectivity&quot;&gt;mediaplayerconnectivity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/9399&quot; target=&quot;_self&quot; title=&quot;PostRank&quot;&gt;PostRank&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/1122&quot; target=&quot;_self&quot; title=&quot;TabMixPlus&quot;&gt;Tab Mix Plus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/5369&quot; target=&quot;_self&quot; title=&quot;YSlow&quot;&gt;YSlow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/firefox&quot;&gt;firefox&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/browsers&quot;&gt;Browsers&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/mozilla-firefox&quot;&gt;Mozilla Firefox&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/mozilla&quot;&gt;mozilla&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Tue, 30 Jun 2009 20:56:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">18 at https://www.nm7.org</guid>
+</item>
+<item>
+ <title>HOW TO: Proxy Firefox through SSH</title>
+ <link>https://www.nm7.org/how-proxy-firefox-through-ssh</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	Requirements:&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;
+		&lt;a href=&quot;http://www.chiark.greenend.org.uk/~sgtatham/putty/&quot; target=&quot;_blank&quot;&gt;PuTTY&lt;/a&gt; on local machine&lt;/li&gt;
+&lt;li&gt;
+		Remote host running &lt;a href=&quot;http://www.openssh.com/&quot; target=&quot;_blank&quot;&gt;OpenSSH&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;
+	&lt;strong&gt;1. Create a new PuTTY session&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Run PuTTY and create a new session in PuTTY to connect to the remote host that is running OpenSSH. Fill in the hostname, the port (usually 22), make sure SSH is checked, give it a session name and hit Save.&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;2. Configure a secure tunnel&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Click on “Tunnels” on the left and set up dynamic fowarding for a local port (e.g. 7070). Under “Add new forwarded port” type in 7070 for the source port, leave the destination blank, and check Auto and Dynamic. Then it the Add button. If you did it correctly, you’ll see D7070 listed in the Forwarded Ports box.&lt;/p&gt;
+&lt;p&gt;
+	That’s it for tunnels, as there is no need to create more than one. Remember to save your session profile in PuTTY so you don’t have to set up the tunnel next time.&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;3. Connect to the remote SSH box&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Double click on the connection profile and type in your username and password when prompted.&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;4. Configure Firefox&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Go to Tools, Options, General, and then click on Connection Settings.&lt;/p&gt;
+&lt;p&gt;
+	Check Manual Proxy Configuration, leave most of the fields blank, but fill in 127.0.0.1 for the SOCKS v5 host with a port of 7070 (or whatever you used in Step 2).&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;5. Enjoy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	That’s it. From now on, as long as you first log into the remote ssh host with PuTTY, your Firefox and IM traffic will be routed over a secure tunnel to the remote host and then out to the Net. Good stuff.&lt;/p&gt;
+&lt;p&gt;
+	Note:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Use &lt;a href=&quot;http://www.pidgin.im/&quot; target=&quot;_blank&quot;&gt;Pidgin&lt;/a&gt; with these settings for your IM needs.&lt;/li&gt;
+&lt;li&gt;
+		Use &lt;a href=&quot;http://www.mozilla.com/thunderbird/&quot; target=&quot;_blank&quot;&gt;Thunderbird&lt;/a&gt; with these settings for email.&lt;/li&gt;
+&lt;li&gt;
+		If you&#039;re using linux, skip the first three steps and run &lt;code&gt;ssh -D 7070 username@host.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h6&gt;
+	Adapted from - &lt;a href=&quot;http://calomel.org/firefox_ssh_proxy.html&quot; target=&quot;_blank&quot; title=&quot;Proxy Firefox through a SSH tunnel&quot;&gt;Proxy Firefox through a SSH tunnel&lt;/a&gt;&lt;/h6&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/firefox&quot;&gt;firefox&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/proxy&quot;&gt;proxy&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/putty&quot;&gt;PuTTY&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/ssh&quot;&gt;ssh&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/taxonomy/term/5&quot;&gt;tunnel&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Sat, 29 Mar 2008 16:43:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">5 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

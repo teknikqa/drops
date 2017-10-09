@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - ssh</title>
+ <link>https://www.nm7.org/tags/ssh</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>HOW TO: Proxy Firefox through SSH</title>
+ <link>https://www.nm7.org/how-proxy-firefox-through-ssh</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	Requirements:&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;
+		&lt;a href=&quot;http://www.chiark.greenend.org.uk/~sgtatham/putty/&quot; target=&quot;_blank&quot;&gt;PuTTY&lt;/a&gt; on local machine&lt;/li&gt;
+&lt;li&gt;
+		Remote host running &lt;a href=&quot;http://www.openssh.com/&quot; target=&quot;_blank&quot;&gt;OpenSSH&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;
+	&lt;strong&gt;1. Create a new PuTTY session&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Run PuTTY and create a new session in PuTTY to connect to the remote host that is running OpenSSH. Fill in the hostname, the port (usually 22), make sure SSH is checked, give it a session name and hit Save.&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;2. Configure a secure tunnel&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Click on “Tunnels” on the left and set up dynamic fowarding for a local port (e.g. 7070). Under “Add new forwarded port” type in 7070 for the source port, leave the destination blank, and check Auto and Dynamic. Then it the Add button. If you did it correctly, you’ll see D7070 listed in the Forwarded Ports box.&lt;/p&gt;
+&lt;p&gt;
+	That’s it for tunnels, as there is no need to create more than one. Remember to save your session profile in PuTTY so you don’t have to set up the tunnel next time.&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;3. Connect to the remote SSH box&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Double click on the connection profile and type in your username and password when prompted.&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;4. Configure Firefox&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	Go to Tools, Options, General, and then click on Connection Settings.&lt;/p&gt;
+&lt;p&gt;
+	Check Manual Proxy Configuration, leave most of the fields blank, but fill in 127.0.0.1 for the SOCKS v5 host with a port of 7070 (or whatever you used in Step 2).&lt;/p&gt;
+&lt;p&gt;
+	&lt;strong&gt;5. Enjoy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	That’s it. From now on, as long as you first log into the remote ssh host with PuTTY, your Firefox and IM traffic will be routed over a secure tunnel to the remote host and then out to the Net. Good stuff.&lt;/p&gt;
+&lt;p&gt;
+	Note:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Use &lt;a href=&quot;http://www.pidgin.im/&quot; target=&quot;_blank&quot;&gt;Pidgin&lt;/a&gt; with these settings for your IM needs.&lt;/li&gt;
+&lt;li&gt;
+		Use &lt;a href=&quot;http://www.mozilla.com/thunderbird/&quot; target=&quot;_blank&quot;&gt;Thunderbird&lt;/a&gt; with these settings for email.&lt;/li&gt;
+&lt;li&gt;
+		If you&#039;re using linux, skip the first three steps and run &lt;code&gt;ssh -D 7070 username@host.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h6&gt;
+	Adapted from - &lt;a href=&quot;http://calomel.org/firefox_ssh_proxy.html&quot; target=&quot;_blank&quot; title=&quot;Proxy Firefox through a SSH tunnel&quot;&gt;Proxy Firefox through a SSH tunnel&lt;/a&gt;&lt;/h6&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/firefox&quot;&gt;firefox&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/proxy&quot;&gt;proxy&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/putty&quot;&gt;PuTTY&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/ssh&quot;&gt;ssh&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/taxonomy/term/5&quot;&gt;tunnel&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Sat, 29 Mar 2008 16:43:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">5 at https://www.nm7.org</guid>
+</item>
+<item>
+ <title>HOW TO: Password-less SSH login</title>
+ <link>https://www.nm7.org/how-password-less-ssh-login</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	&lt;strong&gt;Steps to create a password-less SSH login&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+	These commands are executed on linux or on a pseudo-linux environment, like cygwin. It will not work under Windows.&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;
+		Generate the encryption key. Do this on client machine. &lt;br /&gt;&lt;code&gt;&lt;br /&gt;
+		$ ssh-keygen -t dsa -f ~/.ssh/id_dsa -C &quot;you@client.com&quot;&lt;/code&gt;&lt;br /&gt;
+		A passphrase is recommended, though not required. Enter a passphrase that you can remember. It need not be the same as your password.&lt;br /&gt;
+		 &lt;/li&gt;
+&lt;li&gt;
+		Skip this step if there are multiple clients connecting to the server.&lt;br /&gt;&lt;code&gt;&lt;br /&gt;
+		$ scp ~/.ssh/id_dsa you@server.com&lt;/code&gt;&lt;br /&gt;
+		Enter the password, when asked.&lt;/li&gt;
+&lt;li&gt;
+		This step is required if there are multiple clients who need to connect to the server.&lt;br /&gt;&lt;code&gt;&lt;br /&gt;
+		$ cat ~/.ssh/id_dsa | ssh you@server.com &#039;cat - &amp;gt;&amp;gt; ~/.ssh/authorized_keys&#039;&lt;/code&gt;&lt;br /&gt;
+		Now if you try to connect to the server, it won&#039;t ask for your password. If you have setup a passphrase, you are required to enter that.Do the steps below to ensure a password-less login.&lt;/li&gt;
+&lt;li&gt;
+		Edit your bash_profile to include the following lines. This is adapted to cygwin.&lt;br /&gt;&lt;code&gt;&lt;br /&gt;
+		$ cat &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+SSH_ENV=&quot;$HOME/.ssh/environment&quot;&lt;br /&gt;
+function start_agent {&lt;br /&gt;
+echo &quot;Initializing new SSH agent...&quot;&lt;br /&gt;
+usr/bin/ssh-agent | sed &#039;s/^echo/#echo/&#039; &amp;gt; &quot;${SSH_ENV}&quot;&lt;br /&gt;
+echo succeeded&lt;br /&gt;
+chmod 600 &quot;${SSH_ENV}&quot;&lt;br /&gt;
+. &quot;${SSH_ENV}&quot; &amp;gt; /dev/null&lt;br /&gt;
+/usr/bin/ssh-add;&lt;br /&gt;
+}&lt;br /&gt;
+# Source SSH settings, if applicable&lt;br /&gt;
+if [ -f &quot;${SSH_ENV}&quot; ; then&lt;br /&gt;
+. &quot;${SSH_ENV}&quot; &amp;gt; /dev/null&lt;br /&gt;
+#ps ${SSH_AGENT_PID} doesn&#039;t work under cygwin&lt;br /&gt;
+ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ &amp;gt;&lt;br /&gt;
+/dev/null || {&lt;br /&gt;
+start_agent;&lt;br /&gt;
+}&lt;br /&gt;
+else start_agent;&lt;br /&gt;
+fi&lt;/code&gt;
+	&lt;/li&gt;
+&lt;li&gt;
+		For Cygwin, use&lt;br /&gt;&lt;code&gt;&lt;br /&gt;
+		$ cat &amp;gt;&amp;gt; ~/.bash_profile&lt;br /&gt;
+if [ -f ${HOME}/.ssh-agent ]; then&lt;br /&gt;
+. ${HOME}/.ssh-agent &amp;gt; /dev/null&lt;br /&gt;
+fi&lt;br /&gt;
+if [ -z &quot;$SSH_AGENT_PID&quot; -o -z &quot;`/usr/bin/ps -a|/usr/bin/egrep \&quot;^[ ]+$SSH_AGENT_PID\&quot;`&quot; ]; then&lt;br /&gt;
+/usr/bin/ssh-agent &amp;gt; ${HOME}/.ssh-agent&lt;br /&gt;
+. ${HOME}/.ssh-agent &amp;gt; /dev/null&lt;br /&gt;
+fi&lt;/code&gt;
+	&lt;/li&gt;
+&lt;li&gt;
+		Now type in the last password of this session.&lt;br /&gt;&lt;code&gt;&lt;br /&gt;
+		$ssh-add ~/.ssh/id_dsa&lt;/code&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;
+	Ok, so we have a password-less login. This is done through the ssh-agent that hods, manages and responds to requests for private keys.&lt;/p&gt;
+&lt;p&gt;
+	For more information, read &lt;a href=&quot;http://www.unixwiz.net/techtips/ssh-agent-forwarding.html&quot; target=&quot;_blank&quot; title=&quot; An Illustrated Guide to SSH Agent Forwarding&quot;&gt;An Illustrated Guide to SSH Agent Forwarding&lt;/a&gt;&lt;br /&gt;
+	Adapted from - &lt;a href=&quot;http://mah.everybody.org/docs/ssh&quot; target=&quot;_blank&quot; title=&quot;Using ssh-agent with ssh&quot;&gt;Using ssh-agent with ssh&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/ssh&quot;&gt;ssh&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/cygwin&quot;&gt;cygwin&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/password&quot;&gt;password&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Wed, 12 Mar 2008 20:40:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">2 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

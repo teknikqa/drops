@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - php</title>
+ <link>https://www.nm7.org/tags/php</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Uploadprogress in Dreamhost</title>
+ <link>https://www.nm7.org/uploadprogress-dreamhost</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	Uploadprogress is a useful php extension that displays the progress of a file upload.&lt;/p&gt;
+&lt;p&gt;
+	Till recently I assumed that you couldn&#039;t set it up under a shared hosting environment. I&#039;m glad that I was wrong.&lt;/p&gt;
+&lt;p&gt;
+	This comment in the Drupal forums gives step-by-step instructions on how to do it. (&lt;a class=&quot;active&quot; href=&quot;http://drupal.org/node/456686#comment-2369292&quot;&gt;PECL uploadprogress on shared hosting&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;
+	I&#039;ll have to document the entire process for archival purposes. But some other time. For now its all there in that link.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/dreamhost&quot;&gt;Dreamhost&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/php&quot;&gt;php&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/uploadprogress&quot;&gt;uploadprogress&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Wed, 18 Aug 2010 17:20:06 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">27 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

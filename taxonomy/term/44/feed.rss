@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - Mozilla Firefox</title>
+ <link>https://www.nm7.org/tags/mozilla-firefox</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Firefox 3.5 is here!</title>
+ <link>https://www.nm7.org/firefox-3-5-here</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	Firefox has been updated to version 3.5. This version boasts of a few cool features, such as HTML5 Support and Geo-location.&lt;br /&gt;
+	Get more details at &lt;a href=&quot;http://www.mozilla.com/en-US/firefox/3.5/releasenotes/&quot; target=&quot;_self&quot; title=&quot;Top 10 Firefox 3.5 Features&quot;&gt;http://lifehacker.com/5295655/top-10-firefox-35-features&lt;/a&gt;&lt;a href=&quot;http://www.mozilla.com/en-US/firefox/3.5/releasenotes/&quot; target=&quot;_self&quot; title=&quot;What&#039;s new in Firefox 3.5&quot;&gt;&lt;br /&gt;
+	http://www.mozilla.com/en-US/firefox/3.5/releasenotes/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+	Check out this video of what HTML5 can do. &lt;a href=&quot;http://hacks.mozilla.org/2009/06/connecting-html5-video/&quot; target=&quot;_self&quot; title=&quot;Connecting HTML5 video to the web&quot;&gt;http://hacks.mozilla.org/2009/06/connecting-html5-video/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+	Of course, a version upgrade is never complete without breaking something. My upgrade listed the following extensions as incompatible. Hopefully, these extensions will get upgraded soon.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/4111&quot; target=&quot;_self&quot; title=&quot;Aardvark&quot;&gt;Aardvark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/11036&quot; target=&quot;_self&quot; title=&quot;Current Site IP&quot;&gt;Current Site IP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/8381&quot; target=&quot;_self&quot; title=&quot;Evernote&quot;&gt;Evernote Web Clipper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/8538&quot; target=&quot;_self&quot; title=&quot;Feedly&quot;&gt;feedly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		Google Gears&lt;/li&gt;
+&lt;li&gt;
+		Google Notebook&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/446&quot; target=&quot;_self&quot; title=&quot;MediaPlayerConnectivity&quot;&gt;mediaplayerconnectivity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/9399&quot; target=&quot;_self&quot; title=&quot;PostRank&quot;&gt;PostRank&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/1122&quot; target=&quot;_self&quot; title=&quot;TabMixPlus&quot;&gt;Tab Mix Plus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+		&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/5369&quot; target=&quot;_self&quot; title=&quot;YSlow&quot;&gt;YSlow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/firefox&quot;&gt;firefox&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/browsers&quot;&gt;Browsers&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/mozilla-firefox&quot;&gt;Mozilla Firefox&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/mozilla&quot;&gt;mozilla&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Tue, 30 Jun 2009 20:56:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">18 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

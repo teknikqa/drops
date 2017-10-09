@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - url shortening</title>
+ <link>https://www.nm7.org/taxonomy/term/48</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>HOW TO: Use personal Bit.ly account with UrlbarExt</title>
+ <link>https://www.nm7.org/how-use-personal-bit-ly-account-urlbarext</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/8758&quot; target=&quot;_self&quot; title=&quot;: Add-ons for Firefox&quot;&gt;UrlbarExt&lt;/a&gt; is a wonderful add-on for Firefox. It provides useful tools from within the address bar of Firefox.&lt;/p&gt;
+&lt;p class=&quot;rtecenter&quot;&gt;
+	&lt;img alt=&quot;UrlBarExt&quot; height=&quot;36&quot; src=&quot;http://nm7.org/sites/default/files/images/08/23/2010%20-%2010%3A51/UrlBarExt.png&quot; title=&quot;UrlBarExt&quot; width=&quot;201&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;
+	To quote,&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;
+	UrlbarExt extends the Location Bar with set of commands to (Make Tiny URL,Copy URL,Search site,Go up,Tag pages easily ,Navigate through sequential URL&#039;s,View page cached version,Unblock filtered websites and Surf anonymously using online phproxy servers).&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;
+	This helps to shave a few key strokes from repetitive tasks. Like, copying an URL, searching a site, creating a tiny URL for a link, etc. This is one add-on that is highly recommended for power users. I use bit.ly to create tiny URL&#039;s. bit.ly provides statistics for each short URL. This makes for great info. However, the default bit.ly URL shortener in UrlbarExt does not save this to your account. Follow these steps to use your bit.ly account with UrlbarExt.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Go to Tools -&amp;gt; Add-ons.&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Find the UrlbarExt add-on and click on options.&lt;/li&gt;
+&lt;/ul&gt;&lt;p class=&quot;rtecenter&quot;&gt;
+	&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;img alt=&quot;Firefox Addons&quot; height=&quot;383&quot; src=&quot;http://nm7.org/sites/default/files/images/08/23/2010%20-%2011%3A18/firefox_Addons.png&quot; title=&quot;Firefox Addons&quot; width=&quot;521&quot; /&gt;&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Click on the Tiny tab (the second tab from left).&lt;/li&gt;
+&lt;/ul&gt;&lt;p class=&quot;rtecenter&quot;&gt;
+	&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;img alt=&quot;UrlbarExt Options&quot; height=&quot;569&quot; src=&quot;http://nm7.org/sites/default/files/images/08/23/2010%20-%2011%3A19/UrlbarExt_Options.png&quot; title=&quot;UrlbarExt Options&quot; width=&quot;637&quot; /&gt;&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;span _fck_bookmark=&quot;1&quot; style=&quot;display: none;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Add a new service by clicking on the + symbol. This will create a new url shortening service. Change the caption to whatever you like.&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Enter the following into the api column.&lt;br /&gt;&lt;code&gt;http://api.bit.ly/shorten&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Enter the following into the Arguments column:&lt;br /&gt;&lt;code&gt;version=2.0.1&amp;amp;longUrl=%?url%&amp;amp;login=&lt;strong&gt;user_id&lt;/strong&gt;&amp;amp;apiKey=&lt;strong&gt;api_key&lt;/strong&gt;&amp;amp;history=1&amp;amp;format=xml&lt;/code&gt;
+&lt;p&gt;		Replace &lt;strong&gt;user_id&lt;/strong&gt; with your username and &lt;strong&gt;api_key&lt;/strong&gt; with your bit.ly api key. (You can get a bit.ly api key at &lt;a href=&quot;http://bit.ly/account/&quot; target=&quot;_self&quot; title=&quot;bit.ly account settings&quot;&gt;http://bit.ly/account&lt;/a&gt;). &lt;em&gt;&lt;strong&gt;Update:&lt;/strong&gt; Replace these terms in the string above.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Enter the following into the Filter column:&lt;br /&gt;&lt;code&gt;&amp;lt;shortUrl&amp;gt;(.+)&amp;lt;\/shortUrl&amp;gt;&lt;/code&gt;
+&lt;p&gt;		This will filter the output and return the shortened url to the address bar.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Make sure to select this new service by clicking the radio button in the # column.&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Click OK and you&#039;re set.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;
+	In short, this is what I&#039;ve done. Using the 2.0.1 version of the api, I&#039;ve given a long URL to bit.ly and asked it to shorten the URL. bit.ly will then return the result in xml format. The shortened URL is listed within the &amp;lt;shortUrl&amp;gt; tag. Filter the resulting xml for this tag and we get the short URL.&lt;/p&gt;
+&lt;h6&gt;
+	Reference: bit.ly api documentation at &lt;a href=&quot;http://bit.ly/s8BO&quot; target=&quot;_self&quot; title=&quot;ApiDocumentation - bit.ly api&quot;&gt;http://bit.ly/s8BO&lt;/a&gt;.&lt;/h6&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/firefox&quot;&gt;firefox&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/addons&quot;&gt;addons&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/bit-ly&quot;&gt;bit.ly&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/taxonomy/term/48&quot;&gt;url shortening&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/taxonomy/term/49&quot;&gt;urlbarext&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Thu, 23 Jul 2009 17:27:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">19 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

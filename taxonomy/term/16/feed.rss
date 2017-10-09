@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - drupal</title>
+ <link>https://www.nm7.org/tags/drupal</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Drupal 7</title>
+ <link>https://www.nm7.org/drupal-7</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;I upgraded the site to Drupal 7. The upgrade was smooth. I had to disable some modules that I used on the old site. I didn&#039;t have much use of them, so might as well keep things simple.&lt;/p&gt;
+&lt;p&gt;Some things still need to be fixed. Like the error reporting and logging. I&#039;ll get around to that eventually.&lt;/p&gt;
+&lt;p&gt;But for now, go Drupal!!&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/drupal&quot;&gt;drupal&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Sun, 16 Jan 2011 21:26:41 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">34 at https://www.nm7.org</guid>
+</item>
+<item>
+ <title>Drupal Tutorial - resource</title>
+ <link>https://www.nm7.org/drupal-tutorial-resource</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	A really good resource for anyone who is using Drupal to build websites.&lt;/p&gt;
+&lt;p&gt;
+	Reference: &lt;a href=&quot;http://www.ibm.com/developerworks/ibm/osource/implement.html&quot; target=&quot;_blank&quot; title=&quot;Using open source software to design, develop, and deploy a collaborative Web site&quot;&gt;http://www.ibm.com/developerworks/ibm/osource/implement.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/cms&quot;&gt;cms&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/drupal&quot;&gt;drupal&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/open-source&quot;&gt;open source&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/taxonomy/term/18&quot;&gt;website&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Fri, 06 Feb 2009 14:20:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">8 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>
