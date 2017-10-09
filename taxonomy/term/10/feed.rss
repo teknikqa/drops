@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - Debian</title>
+ <link>https://www.nm7.org/tags/debian</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Making Java 2 work in Debian</title>
+ <link>https://www.nm7.org/making-java-2-work-debian</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	Download the j2se SDK from &lt;a href=&quot;http://java.sun.com&quot; target=&quot;_blank&quot;&gt;http://java.sun.com&lt;/a&gt;. Download the &quot;.bin&quot; file. In a terminal window, run the following commands.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Switch to root use by issuing&lt;br /&gt;&lt;code&gt;$ su -&lt;br /&gt;
+		Password: &lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+		cd to the directory where the file was downloaded.&lt;br /&gt;&lt;code&gt;# cd ~nick/Downloads/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+		Change the permission of the file and execute it.&lt;br /&gt;&lt;code&gt;# chmod +x j2sdk*.bin # ./j2sdk-*.bin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+		Make a directory under &lt;code&gt;/usr/local&lt;/code&gt; (for example &lt;code&gt;/usr/local/sun&lt;/code&gt;).&lt;br /&gt;&lt;code&gt;# mkdir /usr/local/sun&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Copy the extracted java directory to this newly created directory.&lt;br /&gt;&lt;code&gt;# mv j2sdk* /usr/local/sun&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Adjust the configurations to ensure that java works correctly. (This is because Debian/Linux uses different versions of java, that may not be reset when the Sun Java is installed.&lt;br /&gt;&lt;code&gt;# update-alternatives --install /usr/bin/javac javac /usr/local/sun/j2sdk*/bin/javac 120&lt;br /&gt;
+		# update-alternatives --install /usr/bin/java java /usr/local/sun/j2sdk*/bin/java 120&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;
+	You should now have a working jdk environment, virtual machine and compiler.&lt;/p&gt;
+&lt;p&gt;
+	You might need to change your &lt;code&gt;/etc/profile&lt;/code&gt; adding the proper definitions of some environment variables (CLASSPATH, JAVA_COMPILER and JAVA_HOME) so that Java programs can find the kit you just have installed. Append the following lines to your &lt;code&gt;/etc/profile&lt;/code&gt;. The following example show which settings you could add if you had installed Sun&#039;s 1.4.2 jdk:&lt;/p&gt;
+&lt;p&gt;
+	&lt;code&gt;JAVA_COMPILER=/usr/local/sun/j2sdk1.4.2_17/lib:/usr/local/sun/j2sdk1.4.2_17/jre/libexport&lt;br /&gt;
+	export JAVA_COMPILER&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;code&gt;JAVA_HOME=/usr/local/sun/j2sdk1.4.2_17/&lt;br /&gt;
+	export JAVA_HOME&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;code&gt;PATH=$PATH:/usr/local/sun/j2sdk1.4.2_17/bin&lt;/code&gt;&lt;br /&gt;&lt;code&gt;export PATH&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+	This should enable it for all users, except root. If you want to compile and run java programs as root, add the above lines to &lt;code&gt;/root/.bash_profile.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+	Note: This has been tested only in Debian, although it should work in other distro&#039;s too.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/debian&quot;&gt;Debian&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/java&quot;&gt;Java&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Sun, 23 Mar 2008 16:26:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">4 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

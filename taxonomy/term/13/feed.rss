@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - Install</title>
+ <link>https://www.nm7.org/tags/install</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>HOW TO: Install Ruby 1.8.7 on Windows</title>
+ <link>https://www.nm7.org/how-install-ruby-1-8-7-windows</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;div class=&quot;post-text&quot;&gt;
+&lt;ol&gt;&lt;li&gt;
+			Download the windows binaries for Ruby 1.8.7 here: &lt;a href=&quot;http://www.ruby-lang.org/en/downloads/&quot; rel=&quot;nofollow&quot;&gt;http://www.ruby-lang.org/en/downloads/&lt;/a&gt; extract that to wherever you would like, I use c:\ruby. Then put c:\ruby\bin in your PATH environment variable.&lt;/li&gt;
+&lt;li&gt;
+			Download the zlib package: &lt;a href=&quot;http://www.zlib.net/zlib123-dll.zip&quot; rel=&quot;nofollow&quot;&gt;http://www.zlib.net/zlib123-dll.zip&lt;/a&gt; and extract the zlib1.dll, rename it to zlib.dll and move it into your Windows\System32.&lt;/li&gt;
+&lt;li&gt;
+			Download the iconv package: &lt;a href=&quot;http://sourceforge.net/project/showfiles.php?group_id=25167&amp;amp;package_id=51458&quot; rel=&quot;nofollow&quot;&gt;http://sourceforge.net/project/showfiles.php?group_id=25167&amp;amp;package_id=51458&lt;/a&gt;. Find and extract the iconv.dll into your Windows\System32.&lt;/li&gt;
+&lt;li&gt;
+			Download the rubygems package and follow the instructions, basically extracting the package and running &lt;code&gt;ruby setup.rb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+			Verify that everything works properly by trying a &lt;code&gt; gem install rails&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+			once that installs then do: &lt;code&gt; rails test_project&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;	Note: If zlib.dll and iconv.dll don&#039;t work, copy them into c:\ruby\bin&lt;/p&gt;
+&lt;h6&gt;
+		Source: &lt;a href=&quot;http://bit.ly/DICb&quot; target=&quot;_blank&quot; title=&quot;Installing Ruby 1.8.7 (and other stuffs) manually&quot;&gt;http://bit.ly/DICb&lt;/a&gt;&lt;/h6&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/install&quot;&gt;Install&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/ruby&quot;&gt;Ruby&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Tue, 13 Jan 2009 15:43:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">7 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

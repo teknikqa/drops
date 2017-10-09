@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - Linux</title>
+ <link>https://www.nm7.org/tags/linux</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>HOW TO: Root the Samsung Galaxy S2 from Linux</title>
+ <link>https://www.nm7.org/how-root-samsung-galaxy-s2-linux</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;The easiest way to root an Android phone on linux is to use &lt;a href=&quot;http://www.glassechidna.com.au/products/heimdall/&quot;&gt;Heimdall&lt;/a&gt;. Heimdall is an open source program to flash Android on Samsung Galaxy devices.&lt;/p&gt;
+&lt;p&gt;Heimdall is available as a binary executable for many platforms, including Debian. Unfortunately, since I use Fedora, I had to compile the code from scratch.&lt;br /&gt;First install all the needed tools.&lt;/p&gt;
+&lt;pre&gt;# Install packages such as autoconf, make, gcc necessary for compiling the code
+yum groupinstall &quot;Development Tools&quot;
+yum install libusb1-devel qt-devel
+&lt;/pre&gt;&lt;p&gt;Then download the source code and compile it&lt;/p&gt;
+&lt;pre&gt;git clone git://github.com/Benjamin-Dobell/Heimdall.git
+cd Heimdall/libpit
+./autogen.sh
+./configure
+make
+cd ../heimdall
+./autogen.sh
+./configure
+make
+su -c &#039;make install&#039;
+cd ../heimdall-frontend/
+qmake-qt4 heimdall-frontend.pro
+su -c &#039;make install&#039;
+&lt;/pre&gt;&lt;p&gt;You might get a message like “RCC: Warning: No resources in ‘mainwindow.qrc’” during qmake. You can safely ignore it as it is not an actual error and Heimdall will work just fine.&lt;br /&gt;&lt;br /&gt;Now that we have installed Heimdall, we need to find out which kernel our phone is running. So on the Android phone, select &lt;code&gt;Settings -&amp;gt; About Phone&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Look for  the Kernel Version. It will say something like &quot;&lt;code&gt;3.0.15-I9100XW&lt;strong&gt;LP7&lt;/strong&gt;-CL340913&lt;/code&gt;&quot;. Note the text that is in bold (&lt;code&gt;&lt;strong&gt;LP7&lt;/strong&gt;&lt;/code&gt;). Find the kernel image that matches your phone from the &lt;a href=&quot;http://forum.xda-developers.com/showthread.php?t=1103399&quot;&gt;xda-developers forum&lt;/a&gt; based on this string.&lt;br /&gt;&lt;br /&gt;Once you&#039;ve downloaded the image, we need to push it to the phone. Extract the contents of this file. Assuming you downloaded &lt;code&gt;CF-Root-SGS2_XW_XEN_LP7-v5.4-CWM5.zip&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;unzip CF-Root-SGS2_XW_XEN_LP7-v5.4-CWM5.zip
+tar xvf CF-Root-SGS2_XW_XEN_LP7-v5.4-CWM5.tar
+&lt;/pre&gt;&lt;p&gt;This should leave you with the file &lt;code&gt;zImage&lt;/code&gt;.&lt;br /&gt;&lt;br /&gt;Now, put your phone into Download mode.&lt;br /&gt;&lt;br /&gt;Power Off&lt;br /&gt;Hold &lt;code&gt;Volume Down+Home Key+Power&lt;/code&gt; key until you see the intro key&lt;br /&gt;Press &lt;code&gt;Volume Up&lt;/code&gt; to continue (the screen will prompt you to do so)&lt;br /&gt;Connect the phone to your PC with USB and check whether it&#039;s been detected&lt;/p&gt;
+&lt;pre&gt;heimdall detect
+# Should return Device Detected
+su -c &#039;heimdall flash --kernel zImage&#039;
+&lt;/pre&gt;&lt;p&gt;A large amount of output will appear, which should end with&lt;/p&gt;
+&lt;pre&gt;Uploading KERNEL
+100%
+KERNEL upload successful
+Ending Session....
+Rebooting Device....
+Re-attaching kernel driver....
+&lt;/pre&gt;&lt;p&gt;And your phone should reboot into the newly rooted system. Now&#039;s a good time to look at backing up your &lt;strong&gt;&lt;code&gt;efs&lt;/code&gt;&lt;/strong&gt; folder though, to avoid needing to pay Samsung to repair things should anything go wrong.&lt;br /&gt;&lt;br /&gt;So, install a terminal emulator on your phone, and after opening run the following&lt;/p&gt;
+&lt;pre&gt;su
+# Accept when asked if you want to grant permissions
+mkdir /sdcard/efs
+busybox tar zcvf /sdcard/efs/efs-backup.tar.gz /efs
+&lt;/pre&gt;&lt;p&gt;This will create a backup of the &lt;code&gt;/efs&lt;/code&gt; folder on your SDCard, so should you ever break anything in this folder you have half a chance of restoring it!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Other guides to rooting Andoid phones:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://lifehacker.com/5789397/the-always-up+to+date-guide-to-rooting-any-android-phone&quot;&gt;Lifehacker&#039;s The Always Up-To-Date Guide to Rooting the Most Popular Android Phones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://wiki.cyanogenmod.org/index.php&quot;&gt;CyanogenMod Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://forum.xda-developers.com/&quot;&gt;XDA Developers forum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;What to do after rooting your phone? These links should help:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://forum.xda-developers.com/showthread.php?t=1592104&quot;&gt;XDA Beginners Guide: You have rooted your phone, now what can you do&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://android.stackexchange.com/questions/1/ive-rooted-my-phone-now-what-what-do-i-gain-from-rooting&quot;&gt;StackExchange Community help&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/tags-2&quot;&gt;android&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/tags-3&quot;&gt;root&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Tue, 20 Nov 2012 13:40:13 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">42 at https://www.nm7.org</guid>
+</item>
+<item>
+ <title>Setting default directory for screenshots in GNOME</title>
+ <link>https://www.nm7.org/setting-default-directory-screenshots-gnome</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;There is no easy way to configure the location where screenshots get saved using &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;gnome-screenshot&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In order to set this option, install &lt;tt&gt;dconf-editor&lt;/tt&gt; package:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install dconf-editor&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;Run &lt;code&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;tt&gt;dconf-editor&lt;/tt&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;, navigate to &lt;code&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;tt&gt;org/gnome/gnome-screenshot&lt;/tt&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;, and specify any directory in the &lt;code&gt;&lt;tt&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;auto-save-directory&lt;/span&gt;&lt;/strong&gt;&lt;/tt&gt;&lt;/code&gt; value where all screen shots should be saved automatically, for example, &lt;code&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;tt&gt;file:///home/user/Screenshots&lt;/tt&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Remember to change the value of &lt;code&gt;&lt;tt&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;last-save-directory&lt;/span&gt;&lt;/strong&gt;&lt;/tt&gt;&lt;/code&gt; too, so that any screenshot taken by running gnome-screenshot in interactive mmode will save it to this location too.&lt;/p&gt;
+&lt;div class=&quot;post-text&quot;&gt;
+&lt;p&gt;While this sets the directory where screenshots get saved, there is no option to set the name of the screenshots. This isn&#039;t a problem by itself, but if you share the image with Windows users, it is impossible for them to open such files.&lt;/p&gt;
+&lt;p&gt;There is a simple hack to rename these screenshots immediately after their creation.&lt;/p&gt;
+&lt;p&gt;First install inotify-tools&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install inotify-tools&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;Then run this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;while true; do inotifywait -e CREATE ~/Screenshots &amp;amp;&amp;amp; rename &#039;s/\:/\_/&#039; Screenshot/Screenshot*.png; done;&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;When this command is run, everytime you save a new screenshot in &lt;code&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;~/Screenshot/&lt;/span&gt;&lt;/code&gt; directory, the script will rename every file containing &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;code&gt;:&lt;/code&gt;&lt;/span&gt;, substituting &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;code&gt;:&lt;/code&gt;&lt;/span&gt; with &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;_&lt;/span&gt;&lt;code&gt;.&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/tags-0&quot;&gt;GNOME&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/tags-1&quot;&gt;screenshot&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Mon, 12 Nov 2012 12:17:46 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">41 at https://www.nm7.org</guid>
+</item>
+<item>
+ <title>Yum remove Enlightenment</title>
+ <link>https://www.nm7.org/yum-remove-enlightenment</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;Here&#039;s a one-liner that will save some time. Uses sed, uniq, sort and of course regular expressions.&lt;/p&gt;
+&lt;pre&gt;yum remove `yum search enlightenment | awk &#039;{print $1}&#039; | sed -e &#039;s/.\(x86_64\|i686\|noarch\)//&#039; -e &#039;/^[:=]/d&#039; -e &#039;s/\(Loaded\|font-manager\)//&#039; | uniq | sort`&lt;/pre&gt;&lt;h4&gt;What does it do?&lt;/h4&gt;
+&lt;p&gt;It uses yum to remove all packages that are related to the &lt;a href=&quot;http://www.enlightenment.org/&quot;&gt;Enlightenment&lt;/a&gt; Window Manager.&lt;/p&gt;
+&lt;p&gt;It does this by searching the package lists for the word enlightenment, prints just the first word, filters out unnecessary stuff, lists only the unique ones and finally sorts the result. This resulting list of packages is then passed on to yum to remove.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Sat, 19 Mar 2011 00:14:33 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">38 at https://www.nm7.org</guid>
+</item>
+<item>
+ <title>HOW TO: Full screen Ubuntu in VirtualBox</title>
+ <link>https://www.nm7.org/how-full-screen-ubuntu-virtualbox</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	&lt;a href=&quot;http://www.virtualbox.org/&quot; target=&quot;_self&quot; title=&quot;VirtualBox&quot;&gt;VirtualBox&lt;/a&gt; is a great way to test different platforms without actually installing them. It creates a perfect virtual machine to play with. Of course, a dummy virtual machine is of no use, until you install on OS on it.&lt;/p&gt;
+&lt;p class=&quot;rtecenter&quot;&gt;
+	&lt;img alt=&quot;VirtualBox under Windows&quot; height=&quot;361&quot; src=&quot;http://nm7.org/sites/default/files/images/08/23/2010%20-%2010%3A49/ubuntuvbox.png&quot; title=&quot;VirtualBox under Windows&quot; width=&quot;700&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;rtecenter&quot;&gt;
+	 &lt;/p&gt;
+&lt;p&gt;
+	To learn more on setting up VirtualBox, check out this great post at &lt;a href=&quot;http://lifehacker.com/5204434/the-beginners-guide-to-creating-virtual-machines-with-virtualbox&quot; target=&quot;_self&quot; title=&quot;The Beginner&#039;s Guide to Creating Virtual Machines with VirtualBox&quot;&gt;Lifehacker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+	And if you want pre-compiled VirtualBox images, head over to &lt;a href=&quot;http://virtualboximages.com/&quot; target=&quot;_self&quot; title=&quot;VirtualBox Images&quot;&gt;VirtualBox Images&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+	This post is about how to get the Guest Additions running for Ubuntu. Why would you want to run the Guest Additions? For one, it provides full-screen ability. Complete screen-size, not the teeny window size that is present by default. There are other goodies too, such as, mouse-pointer integration and improved performance.&lt;/p&gt;
+&lt;p&gt;
+	The only drawback is the license. These additions are covered under the &lt;a href=&quot;http://www.virtualbox.org/wiki/VirtualBox_PUEL&quot; target=&quot;_self&quot; title=&quot;VirtualBox_PUEL - VirtualBox&quot;&gt;PUEL license&lt;/a&gt;, rather than the GPLv2.&lt;/p&gt;
+&lt;p&gt;
+	Alright, now how do you get the additions working. I&#039;m using Ubuntu as my guest OS. But, these steps can be easily modified for other Linux OSes too.&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;
+		Mount your Ubuntu cd/ISO from the VirtualBox GUI.&lt;/li&gt;
+&lt;li&gt;
+		Mount the VirtualBox Guest Additions by clicking on &lt;strong&gt;Device &amp;gt; Install Guest Additions&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;
+		Once Ubuntu is up and running, open a terminal and find the kernel version by running &lt;code&gt; uname -r&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+		Run the following command to install pre-requisites. (Replace KERNELVERSION with the output of the above command). &lt;code&gt; sudo apt-get install build-essential linux-headers-KERNELVERSION&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+		Depending on your platform, run the VirtualBoxAdditions installer &lt;code&gt; sudo sh /media/cdrom/VBoxLinuxAdditions-x86.run all (Use VBoxLinuxAdditions-x64.run for 64-bit platforms).&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+		Restart the machine.&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;
+	Note: For Fedora (or rpms based machines), run the 4th step as&lt;/p&gt;
+&lt;p&gt;
+	&lt;code&gt;yum install kernel-headers kernel-devel gcc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+	Source: &lt;a href=&quot;http://www.robotification.com/component/content/article/8-programming/7-how-to-install-virtual-box-additions-on-ubuntu.html&quot; target=&quot;_self&quot; title=&quot;How to install Virtual Box Additions on Ubuntu&quot;&gt;Robotification&lt;/a&gt; [via &lt;a href=&quot;http://ubuntuforums.org/showthread.php?t=588181&quot; target=&quot;_self&quot; title=&quot;[SOLVED] Virtualbox fullscreen&quot;&gt;Ubuntu Forums&lt;/a&gt;] &amp;amp; &lt;a href=&quot;http://fedorasolved.org/Members/realz/VB_Guest_Addition&quot; target=&quot;_self&quot; title=&quot;How To Install Virtualbox Guest Additions in Fedora Guest&quot;&gt;FedoraSolved&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/fedora&quot;&gt;fedora&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/taxonomy/term/41&quot;&gt;ubuntu&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/taxonomy/term/42&quot;&gt;virtualbox&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Sat, 06 Jun 2009 04:07:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">17 at https://www.nm7.org</guid>
+</item>
+<item>
+ <title>Making Java 2 work in Debian</title>
+ <link>https://www.nm7.org/making-java-2-work-debian</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;
+	Download the j2se SDK from &lt;a href=&quot;http://java.sun.com&quot; target=&quot;_blank&quot;&gt;http://java.sun.com&lt;/a&gt;. Download the &quot;.bin&quot; file. In a terminal window, run the following commands.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;
+		Switch to root use by issuing&lt;br /&gt;&lt;code&gt;$ su -&lt;br /&gt;
+		Password: &lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+		cd to the directory where the file was downloaded.&lt;br /&gt;&lt;code&gt;# cd ~nick/Downloads/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+		Change the permission of the file and execute it.&lt;br /&gt;&lt;code&gt;# chmod +x j2sdk*.bin # ./j2sdk-*.bin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+		Make a directory under &lt;code&gt;/usr/local&lt;/code&gt; (for example &lt;code&gt;/usr/local/sun&lt;/code&gt;).&lt;br /&gt;&lt;code&gt;# mkdir /usr/local/sun&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Copy the extracted java directory to this newly created directory.&lt;br /&gt;&lt;code&gt;# mv j2sdk* /usr/local/sun&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;
+		Adjust the configurations to ensure that java works correctly. (This is because Debian/Linux uses different versions of java, that may not be reset when the Sun Java is installed.&lt;br /&gt;&lt;code&gt;# update-alternatives --install /usr/bin/javac javac /usr/local/sun/j2sdk*/bin/javac 120&lt;br /&gt;
+		# update-alternatives --install /usr/bin/java java /usr/local/sun/j2sdk*/bin/java 120&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;
+	You should now have a working jdk environment, virtual machine and compiler.&lt;/p&gt;
+&lt;p&gt;
+	You might need to change your &lt;code&gt;/etc/profile&lt;/code&gt; adding the proper definitions of some environment variables (CLASSPATH, JAVA_COMPILER and JAVA_HOME) so that Java programs can find the kit you just have installed. Append the following lines to your &lt;code&gt;/etc/profile&lt;/code&gt;. The following example show which settings you could add if you had installed Sun&#039;s 1.4.2 jdk:&lt;/p&gt;
+&lt;p&gt;
+	&lt;code&gt;JAVA_COMPILER=/usr/local/sun/j2sdk1.4.2_17/lib:/usr/local/sun/j2sdk1.4.2_17/jre/libexport&lt;br /&gt;
+	export JAVA_COMPILER&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;code&gt;JAVA_HOME=/usr/local/sun/j2sdk1.4.2_17/&lt;br /&gt;
+	export JAVA_HOME&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+	&lt;code&gt;PATH=$PATH:/usr/local/sun/j2sdk1.4.2_17/bin&lt;/code&gt;&lt;br /&gt;&lt;code&gt;export PATH&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+	This should enable it for all users, except root. If you want to compile and run java programs as root, add the above lines to &lt;code&gt;/root/.bash_profile.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+	Note: This has been tested only in Debian, although it should work in other distro&#039;s too.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/debian&quot;&gt;Debian&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/java&quot;&gt;Java&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Sun, 23 Mar 2008 16:26:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">4 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

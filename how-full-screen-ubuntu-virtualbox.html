@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="VirtualBox is a great way to test different platforms without actually installing them. It creates a perfect virtual machine to play with. Of course, a dummy virtual machine is of no use, until you install on OS on it.   " />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<script src="cdn-cgi/apps/head/kmZaPXSsnjWMvuMbkz_55JKKKwU.js"></script><link rel="canonical" href="how-full-screen-ubuntu-virtualbox.html" />
+<link rel="shortlink" href="how-full-screen-ubuntu-virtualbox.html" />
+<meta property="og:site_name" content="Nick Mathew" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HOW TO: Full screen Ubuntu in VirtualBox" />
+<meta property="og:url" content="https://www.nm7.org/how-full-screen-ubuntu-virtualbox" />
+<meta property="og:description" content="VirtualBox is a great way to test different platforms without actually installing them. It creates a perfect virtual machine to play with. Of course, a dummy virtual machine is of no use, until you install on OS on it.   " />
+<meta property="og:updated_time" content="2015-04-15T04:40:19-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://www.nm7.org/how-full-screen-ubuntu-virtualbox" />
+<meta name="twitter:title" content="HOW TO: Full screen Ubuntu in VirtualBox" />
+<meta name="twitter:description" content="VirtualBox is a great way to test different platforms without actually installing them. It creates a perfect virtual machine to play with. Of course, a dummy virtual machine is of no use, until you install on OS on it.   " />
+<meta property="article:published_time" content="2009-06-06T00:07:00-04:00" />
+<meta property="article:modified_time" content="2015-04-15T04:40:19-04:00" />
+<meta itemprop="name" content="HOW TO: Full screen Ubuntu in VirtualBox" />
+<meta itemprop="description" content="VirtualBox is a great way to test different platforms without actually installing them. It creates a perfect virtual machine to play with. Of course, a dummy virtual machine is of no use, until you install on OS on it.   " />
+<meta name="dcterms.title" content="HOW TO: Full screen Ubuntu in VirtualBox" />
+<meta name="dcterms.creator" content="teknikqa" />
+<meta name="dcterms.description" content="VirtualBox is a great way to test different platforms without actually installing them. It creates a perfect virtual machine to play with. Of course, a dummy virtual machine is of no use, until you install on OS on it.   " />
+<meta name="dcterms.date" content="2009-06-06T00:07-04:00" />
+<meta name="dcterms.type" content="Text" />
+<meta name="dcterms.format" content="text/html" />
+<meta name="dcterms.identifier" content="https://www.nm7.org/how-full-screen-ubuntu-virtualbox" />
+<link rel="shortcut icon" href="https://www.nm7.org/misc/favicon.ico" type="image/ico" />
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" />
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" />
+<![endif]-->
+<title>HOW TO: Full screen Ubuntu in VirtualBox | Nick Mathew</title>
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_JCY_XIQAlFCN_AbvjWfbNrXAa03IOm7FrXUxsDgkibE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_kj2ftflLnWM3JjZo-9KlsZJ1Pg8Ut3g22855DEewfrw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" media="all" />
+<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" media="all" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/bootswatch/3.0.2/readable/bootstrap.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="sites/default/files/css/css_He_XBfbDeLff4RLaHmf3xVRWDInfXBGAWpwI_pqSWSE.css" media="all" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/sites/all/modules/contrib/jquery_update/replace/jquery/2.1/jquery.min.js'>\x3C/script>")</script>
+<script src="sites/default/files/js/js_V1ZuwJK9uzfm6fFffOcHHubfxnimoxnbgG58pvTQdpY.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-24255513-1", {"cookieDomain":"auto"});ga("send", "pageview");</script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bootstrap_clean_blog","theme_token":"pxbXFNH4RsWAIZmHCNN7uZoQxecAEkhvb4bYXiHBHUI","js":{"sites\/all\/themes\/bootstrap\/js\/bootstrap.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/2.1.4\/jquery.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/cdn.jsdelivr.net\/bootstrap\/3.0.2\/js\/bootstrap.min.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1},"css":{"modules\/system\/system.base.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/geshifilter\/geshifilter.css":1,"http:\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.1.0\/css\/font-awesome.min.css":1,"http:\/\/fonts.googleapis.com\/css?family=Lora:400,700,400italic,700italic":1,"http:\/\/fonts.googleapis.com\/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800":1,"\/\/cdn.jsdelivr.net\/bootswatch\/3.0.2\/readable\/bootstrap.min.css":1,"sites\/all\/themes\/bootstrap\/css\/3.0.2\/overrides-readable.min.css":1,"sites\/all\/themes\/bootstrap_clean_blog\/assets\/css\/clean-blog.css":1,"sites\/all\/themes\/bootstrap_clean_blog\/assets\/css\/theme.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"bootstrap":{"anchorsFix":1,"anchorsSmoothScrolling":1,"formHasError":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-17 node-type-post">
+<div id="skip-link">
+<a href="how-full-screen-ubuntu-virtualbox.html#main-content" class="element-invisible element-focusable">Skip to main content</a>
+</div>
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+<div class="container-fluid">
+
+<div class="navbar-header page-scroll">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="index.html" title="Home">Nick Mathew</a>
+</div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right"><li class="first leaf"><a href="about.html">About</a></li>
+<li class="leaf"><a href="index.html">Posts</a></li>
+<li class="last leaf"><a href="contact.html" title="">Contact</a></li>
+</ul> </div>
+
+</div>
+</nav>
+
+
+<header class="intro-header" style="background-image: url('sites/all/themes/bootstrap_clean_blog/assets/img/home-bg.jpg')">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="post-heading">
+<h1>HOW TO: Full screen Ubuntu in VirtualBox</h1>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<article>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="tabs"></div> <div class="region region-content">
+<section id="block-system-main" class="block block-system clearfix">
+<div id="node-17" class="node node-post clearfix">
+<div class="content">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>
+<a href="http://www.virtualbox.org/" target="_self" title="VirtualBox">VirtualBox</a> is a great way to test different platforms without actually installing them. It creates a perfect virtual machine to play with. Of course, a dummy virtual machine is of no use, until you install on OS on it.</p>
+<p class="rtecenter">
+<img alt="VirtualBox under Windows" height="361" src="http://nm7.org/sites/default/files/images/08/23/2010%20-%2010%3A49/ubuntuvbox.png" title="VirtualBox under Windows" width="700" /></p>
+<p class="rtecenter">
+ </p>
+<p>
+To learn more on setting up VirtualBox, check out this great post at <a href="http://lifehacker.com/5204434/the-beginners-guide-to-creating-virtual-machines-with-virtualbox" target="_self" title="The Beginner's Guide to Creating Virtual Machines with VirtualBox">Lifehacker</a>.</p>
+<p>
+And if you want pre-compiled VirtualBox images, head over to <a href="http://virtualboximages.com/" target="_self" title="VirtualBox Images">VirtualBox Images</a>.</p>
+<p>
+This post is about how to get the Guest Additions running for Ubuntu. Why would you want to run the Guest Additions? For one, it provides full-screen ability. Complete screen-size, not the teeny window size that is present by default. There are other goodies too, such as, mouse-pointer integration and improved performance.</p>
+<p>
+The only drawback is the license. These additions are covered under the <a href="http://www.virtualbox.org/wiki/VirtualBox_PUEL" target="_self" title="VirtualBox_PUEL - VirtualBox">PUEL license</a>, rather than the GPLv2.</p>
+<p>
+Alright, now how do you get the additions working. I'm using Ubuntu as my guest OS. But, these steps can be easily modified for other Linux OSes too.</p>
+<ol><li>
+Mount your Ubuntu cd/ISO from the VirtualBox GUI.</li>
+<li>
+Mount the VirtualBox Guest Additions by clicking on <strong>Device &gt; Install Guest Additions</strong>.</li>
+<li>
+Once Ubuntu is up and running, open a terminal and find the kernel version by running <code> uname -r</code></li>
+<li>
+Run the following command to install pre-requisites. (Replace KERNELVERSION with the output of the above command). <code> sudo apt-get install build-essential linux-headers-KERNELVERSION</code></li>
+<li>
+Depending on your platform, run the VirtualBoxAdditions installer <code> sudo sh /media/cdrom/VBoxLinuxAdditions-x86.run all (Use VBoxLinuxAdditions-x64.run for 64-bit platforms).</code></li>
+<li>
+Restart the machine.</li>
+</ol><p>
+Note: For Fedora (or rpms based machines), run the 4th step as</p>
+<p>
+<code>yum install kernel-headers kernel-devel gcc</code></p>
+<p>
+Source: <a href="http://www.robotification.com/component/content/article/8-programming/7-how-to-install-virtual-box-additions-on-ubuntu.html" target="_self" title="How to install Virtual Box Additions on Ubuntu">Robotification</a> [via <a href="http://ubuntuforums.org/showthread.php?t=588181" target="_self" title="[SOLVED] Virtualbox fullscreen">Ubuntu Forums</a>] &amp; <a href="http://fedorasolved.org/Members/realz/VB_Guest_Addition" target="_self" title="How To Install Virtualbox Guest Additions in Fedora Guest">FedoraSolved</a></p>
+</div></div></div><div class="field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix"><div class="field-label">Tags:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="tags/linux.html">Linux</a></div><div class="field-item odd"><a href="tags/fedora.html">fedora</a></div><div class="field-item even"><a href="taxonomy/term/41.html">ubuntu</a></div><div class="field-item odd"><a href="taxonomy/term/42.html">virtualbox</a></div></div></div> </div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</article>
+<hr>
+
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center">
+<li>
+<a target="_blank" href="https://twitter.com/teknikqa">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a target="_blank" href="https://www.facebook.com/teknikqa">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a target="_blank" href="https://github.com/teknikqa">
+<span class="fa-stack fa-lg">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<script src="sites/default/files/js/js_OTdL_00eEtQq3wzsUAHLDYwgtcHpzbgUFYeJRcQf8f8.js"></script>
+</body>
+</html>

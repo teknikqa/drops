@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - screenshot</title>
+ <link>https://www.nm7.org/tags/tags-1</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Setting default directory for screenshots in GNOME</title>
+ <link>https://www.nm7.org/setting-default-directory-screenshots-gnome</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;There is no easy way to configure the location where screenshots get saved using &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;gnome-screenshot&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In order to set this option, install &lt;tt&gt;dconf-editor&lt;/tt&gt; package:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install dconf-editor&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;Run &lt;code&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;tt&gt;dconf-editor&lt;/tt&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;, navigate to &lt;code&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;tt&gt;org/gnome/gnome-screenshot&lt;/tt&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;, and specify any directory in the &lt;code&gt;&lt;tt&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;auto-save-directory&lt;/span&gt;&lt;/strong&gt;&lt;/tt&gt;&lt;/code&gt; value where all screen shots should be saved automatically, for example, &lt;code&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;tt&gt;file:///home/user/Screenshots&lt;/tt&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Remember to change the value of &lt;code&gt;&lt;tt&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;last-save-directory&lt;/span&gt;&lt;/strong&gt;&lt;/tt&gt;&lt;/code&gt; too, so that any screenshot taken by running gnome-screenshot in interactive mmode will save it to this location too.&lt;/p&gt;
+&lt;div class=&quot;post-text&quot;&gt;
+&lt;p&gt;While this sets the directory where screenshots get saved, there is no option to set the name of the screenshots. This isn&#039;t a problem by itself, but if you share the image with Windows users, it is impossible for them to open such files.&lt;/p&gt;
+&lt;p&gt;There is a simple hack to rename these screenshots immediately after their creation.&lt;/p&gt;
+&lt;p&gt;First install inotify-tools&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install inotify-tools&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;Then run this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;while true; do inotifywait -e CREATE ~/Screenshots &amp;amp;&amp;amp; rename &#039;s/\:/\_/&#039; Screenshot/Screenshot*.png; done;&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;When this command is run, everytime you save a new screenshot in &lt;code&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;~/Screenshot/&lt;/span&gt;&lt;/code&gt; directory, the script will rename every file containing &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;code&gt;:&lt;/code&gt;&lt;/span&gt;, substituting &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;code&gt;:&lt;/code&gt;&lt;/span&gt; with &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;_&lt;/span&gt;&lt;code&gt;.&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/tags-0&quot;&gt;GNOME&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/tags-1&quot;&gt;screenshot&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Mon, 12 Nov 2012 12:17:46 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">41 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

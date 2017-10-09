@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="https://www.nm7.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Nick Mathew - sansa</title>
+ <link>https://www.nm7.org/tags/sansa</link>
+ <description></description>
+ <language>en</language>
+<item>
+ <title>Resetting the Sansa e280 v2</title>
+ <link>https://www.nm7.org/resetting-sansa-e280-v2</link>
+ <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;My SanDisk Sansa e280 v2 ran into a glitch recently. It just wouldn&#039;t recharge the battery. The Sansa charges via a proprietary cable through the USB port. Having never experienced this issue before, I thought it was something wrong with the cable or with the USB ports on my computer. Well, after a bit of googling, I found the solution. Reset the device! So how do you reset the Sansa.&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;
+		Slide the HOLD switch atop the device to the right.&lt;/li&gt;
+&lt;li&gt;
+		Press and hold the Power / MENU button for 15 seconds.&lt;/li&gt;
+&lt;li&gt;
+		Press and hold the &amp;lt;&amp;lt; button, while plugging in the USB. Keep holding it till the Sansa says &quot;Connected&quot;.&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;	This should cause Windows to pop up with the installing driver status message. Windows Explorer will now list two flash drives as devices with removable storage. Viola, Problem solved.&lt;/p&gt;
+&lt;p&gt;	Reference:&lt;a href=&quot;http://forums.sandisk.com/sansa/board/message?board.id=e200&amp;amp;message.id=25281&amp;amp;query.id=351405#M25281&quot;&gt;http://bit.ly/Hh9ov &lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/sansa&quot;&gt;sansa&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+ <pubDate>Mon, 18 May 2009 23:45:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">11 at https://www.nm7.org</guid>
+</item>
+</channel>
+</rss>

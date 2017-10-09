@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="https://www.nm7.org/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nick Mathew - Non-confirming thoughts</title>
+    <link>https://www.nm7.org/</link>
+    <description></description>
+    <language>en</language>
+     <atom:link href="https://www.nm7.org/rss.xml" rel="self" type="application/rss+xml" />
+      <item>
+    <title>HOW TO: Root the Samsung Galaxy S2 from Linux</title>
+    <link>https://www.nm7.org/how-root-samsung-galaxy-s2-linux</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;The easiest way to root an Android phone on linux is to use &lt;a href=&quot;http://www.glassechidna.com.au/products/heimdall/&quot;&gt;Heimdall&lt;/a&gt;. Heimdall is an open source program to flash Android on Samsung Galaxy devices.&lt;/p&gt;
+&lt;p&gt;Heimdall is available as a binary executable for many platforms, including Debian. Unfortunately, since I use Fedora, I had to compile the code from scratch.&lt;br /&gt;First install all the needed tools.&lt;/p&gt;
+&lt;pre&gt;# Install packages such as autoconf, make, gcc necessary for compiling the code
+yum groupinstall &quot;Development Tools&quot;
+yum install libusb1-devel qt-devel
+&lt;/pre&gt;&lt;p&gt;Then download the source code and compile it&lt;/p&gt;
+&lt;pre&gt;git clone git://github.com/Benjamin-Dobell/Heimdall.git
+cd Heimdall/libpit
+./autogen.sh
+./configure
+make
+cd ../heimdall
+./autogen.sh
+./configure
+make
+su -c &#039;make install&#039;
+cd ../heimdall-frontend/
+qmake-qt4 heimdall-frontend.pro
+su -c &#039;make install&#039;
+&lt;/pre&gt;&lt;p&gt;You might get a message like “RCC: Warning: No resources in ‘mainwindow.qrc’” during qmake. You can safely ignore it as it is not an actual error and Heimdall will work just fine.&lt;br /&gt;&lt;br /&gt;Now that we have installed Heimdall, we need to find out which kernel our phone is running. So on the Android phone, select &lt;code&gt;Settings -&amp;gt; About Phone&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Look for  the Kernel Version. It will say something like &quot;&lt;code&gt;3.0.15-I9100XW&lt;strong&gt;LP7&lt;/strong&gt;-CL340913&lt;/code&gt;&quot;. Note the text that is in bold (&lt;code&gt;&lt;strong&gt;LP7&lt;/strong&gt;&lt;/code&gt;). Find the kernel image that matches your phone from the &lt;a href=&quot;http://forum.xda-developers.com/showthread.php?t=1103399&quot;&gt;xda-developers forum&lt;/a&gt; based on this string.&lt;br /&gt;&lt;br /&gt;Once you&#039;ve downloaded the image, we need to push it to the phone. Extract the contents of this file. Assuming you downloaded &lt;code&gt;CF-Root-SGS2_XW_XEN_LP7-v5.4-CWM5.zip&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;unzip CF-Root-SGS2_XW_XEN_LP7-v5.4-CWM5.zip
+tar xvf CF-Root-SGS2_XW_XEN_LP7-v5.4-CWM5.tar
+&lt;/pre&gt;&lt;p&gt;This should leave you with the file &lt;code&gt;zImage&lt;/code&gt;.&lt;br /&gt;&lt;br /&gt;Now, put your phone into Download mode.&lt;br /&gt;&lt;br /&gt;Power Off&lt;br /&gt;Hold &lt;code&gt;Volume Down+Home Key+Power&lt;/code&gt; key until you see the intro key&lt;br /&gt;Press &lt;code&gt;Volume Up&lt;/code&gt; to continue (the screen will prompt you to do so)&lt;br /&gt;Connect the phone to your PC with USB and check whether it&#039;s been detected&lt;/p&gt;
+&lt;pre&gt;heimdall detect
+# Should return Device Detected
+su -c &#039;heimdall flash --kernel zImage&#039;
+&lt;/pre&gt;&lt;p&gt;A large amount of output will appear, which should end with&lt;/p&gt;
+&lt;pre&gt;Uploading KERNEL
+100%
+KERNEL upload successful
+Ending Session....
+Rebooting Device....
+Re-attaching kernel driver....
+&lt;/pre&gt;&lt;p&gt;And your phone should reboot into the newly rooted system. Now&#039;s a good time to look at backing up your &lt;strong&gt;&lt;code&gt;efs&lt;/code&gt;&lt;/strong&gt; folder though, to avoid needing to pay Samsung to repair things should anything go wrong.&lt;br /&gt;&lt;br /&gt;So, install a terminal emulator on your phone, and after opening run the following&lt;/p&gt;
+&lt;pre&gt;su
+# Accept when asked if you want to grant permissions
+mkdir /sdcard/efs
+busybox tar zcvf /sdcard/efs/efs-backup.tar.gz /efs
+&lt;/pre&gt;&lt;p&gt;This will create a backup of the &lt;code&gt;/efs&lt;/code&gt; folder on your SDCard, so should you ever break anything in this folder you have half a chance of restoring it!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Other guides to rooting Andoid phones:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://lifehacker.com/5789397/the-always-up+to+date-guide-to-rooting-any-android-phone&quot;&gt;Lifehacker&#039;s The Always Up-To-Date Guide to Rooting the Most Popular Android Phones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://wiki.cyanogenmod.org/index.php&quot;&gt;CyanogenMod Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://forum.xda-developers.com/&quot;&gt;XDA Developers forum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;What to do after rooting your phone? These links should help:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://forum.xda-developers.com/showthread.php?t=1592104&quot;&gt;XDA Beginners Guide: You have rooted your phone, now what can you do&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://android.stackexchange.com/questions/1/ive-rooted-my-phone-now-what-what-do-i-gain-from-rooting&quot;&gt;StackExchange Community help&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt; &lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/tags-2&quot;&gt;android&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/tags-3&quot;&gt;root&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Tue, 20 Nov 2012 13:40:13 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">42 at https://www.nm7.org</guid>
+  </item>
+  <item>
+    <title>Setting default directory for screenshots in GNOME</title>
+    <link>https://www.nm7.org/setting-default-directory-screenshots-gnome</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;There is no easy way to configure the location where screenshots get saved using &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;gnome-screenshot&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In order to set this option, install &lt;tt&gt;dconf-editor&lt;/tt&gt; package:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install dconf-editor&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;Run &lt;code&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;tt&gt;dconf-editor&lt;/tt&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;, navigate to &lt;code&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;tt&gt;org/gnome/gnome-screenshot&lt;/tt&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;, and specify any directory in the &lt;code&gt;&lt;tt&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;auto-save-directory&lt;/span&gt;&lt;/strong&gt;&lt;/tt&gt;&lt;/code&gt; value where all screen shots should be saved automatically, for example, &lt;code&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;tt&gt;file:///home/user/Screenshots&lt;/tt&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Remember to change the value of &lt;code&gt;&lt;tt&gt;&lt;strong&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;last-save-directory&lt;/span&gt;&lt;/strong&gt;&lt;/tt&gt;&lt;/code&gt; too, so that any screenshot taken by running gnome-screenshot in interactive mmode will save it to this location too.&lt;/p&gt;
+&lt;div class=&quot;post-text&quot;&gt;
+&lt;p&gt;While this sets the directory where screenshots get saved, there is no option to set the name of the screenshots. This isn&#039;t a problem by itself, but if you share the image with Windows users, it is impossible for them to open such files.&lt;/p&gt;
+&lt;p&gt;There is a simple hack to rename these screenshots immediately after their creation.&lt;/p&gt;
+&lt;p&gt;First install inotify-tools&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install inotify-tools&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;Then run this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;while true; do inotifywait -e CREATE ~/Screenshots &amp;amp;&amp;amp; rename &#039;s/\:/\_/&#039; Screenshot/Screenshot*.png; done;&lt;/code&gt;
+&lt;/pre&gt;&lt;p&gt;When this command is run, everytime you save a new screenshot in &lt;code&gt;&lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;~/Screenshot/&lt;/span&gt;&lt;/code&gt; directory, the script will rename every file containing &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;code&gt;:&lt;/code&gt;&lt;/span&gt;, substituting &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;&lt;code&gt;:&lt;/code&gt;&lt;/span&gt; with &lt;span style=&quot;font-family:courier new,courier,monospace;&quot;&gt;_&lt;/span&gt;&lt;code&gt;.&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/tags-0&quot;&gt;GNOME&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/tags-1&quot;&gt;screenshot&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Mon, 12 Nov 2012 12:17:46 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">41 at https://www.nm7.org</guid>
+  </item>
+  <item>
+    <title>Learning philosophy with the New York Times</title>
+    <link>https://www.nm7.org/learning-philosophy-new-york-times</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;From David Brooks&#039; &lt;a href=&quot;https://www.nytimes.com/2011/03/29/opinion/29brooks.html&quot;&gt;summary&lt;/a&gt; of a symposium organized by Edge.org on &lt;a href=&quot;http://www.edge.org/q2011/q11_index.html#greenej&quot;&gt;&quot;What scientific concept would improve everybody’s cognitive toolkit?&quot;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://secure.wikimedia.org/wikipedia/en/wiki/Path_dependence&quot;&gt;Path Dependence&lt;/a&gt;&lt;br /&gt;
+    Decisions for any circumstance is limited by decisions taken in the past, even though past circumstances may not be relevant anymore.&lt;br /&gt;
+    “something that seems normal or inevitable today began with a choice that made sense at a particular time in the past, but survived despite the eclipse of the justification for that choice.”&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://secure.wikimedia.org/wikipedia/en/wiki/Einstellung_effect&quot;&gt;Einstellung Effect&lt;/a&gt;&lt;br /&gt;
+    Predisposition to solve problems based on past experiences rather than approaching each problem individually.&lt;br /&gt;
+    the idea that we often try to solve problems by using solutions that worked in the past instead of looking at each situation on its own terms. This effect is especially powerful in foreign affairs, where each new conflict is viewed through the prism of Vietnam or Munich or the cold war or Iraq.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://secure.wikimedia.org/wikipedia/en/wiki/Anchoring&quot;&gt;Focusing Illusion&lt;/a&gt;&lt;br /&gt;
+    Bias that occurs when one aspect of an event is given too much importance, thereby affecting the accuracy of the predicted future outcome.&lt;br /&gt;
+    “nothing in life is as important as you think it is while you are thinking about it.”&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://secure.wikimedia.org/wikipedia/en/wiki/Supervenience&quot;&gt;Supervenience&lt;/a&gt;&lt;br /&gt;
+    This is one of the harder ones. Supervene literally means to take place or occur as something additional or extraneous.&lt;br /&gt;
+    In essence it means, to be dependent on a set of facts or properties in such a way that change can occur only after change has occurred in those facts or properties.&lt;br /&gt;
+    Imagine a picture on a computer screen of a dog sitting in a rowboat. It can be described as a picture of a dog, but at a different level it can be described as an arrangement of pixels and colors. The relationship between the two levels is asymmetric. The same image can be displayed at different sizes with different pixels. The high-level properties (dogness) supervene the low-level properties (pixels).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://secure.wikimedia.org/wikipedia/en/wiki/Fundamental_attribution_error&quot;&gt;Fundamental Attribution Error&lt;/a&gt;&lt;br /&gt;
+    Wikipedia explains it as the &#039;tendency to over-value dispositional or personality-based explanations for the observed behaviors of others while under-valuing situational explanations for those behaviors.&#039;&lt;br /&gt;
+    Don’t try to explain by character traits behavior that is better explained by context.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://secure.wikimedia.org/wikipedia/en/wiki/Emergence&quot;&gt;Emergence (Concept)&lt;/a&gt;&lt;br /&gt;
+    Ah! The easiest way to understand emergence is through &lt;a href=&quot;https://secure.wikimedia.org/wikipedia/en/wiki/Fractal&quot;&gt;fractals&lt;/a&gt;. It is basically, the way how complex systems arise from simple interactions.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Tue, 05 Apr 2011 00:48:18 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">40 at https://www.nm7.org</guid>
+  </item>
+  <item>
+    <title>One Bad Apple Spoils the Bunch</title>
+    <link>https://www.nm7.org/one-bad-apple-spoils-bunch</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;This is interesting: &lt;span style=&quot;font-style:italic&quot;&gt;&lt;a href=&quot;http://hal.inria.fr/inria-00574178/en/&quot;&gt;One Bad Apple Spoils the Bunch: Exploiting P2P Applications to Trace and Proﬁle Tor Users&lt;/a&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Assume that a source wants to leak top secret documents anonymously. It is considered secure to do so through Tor using a privacy-enhancing browser plugin such as TorButton. However, assume that, at the same time, this source uses another insecure application on Tor. Is it then possible to associate the top secret documents with the IP address of the anonymous source? The answer to this question is yes!&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Abstract:&lt;/b&gt; Tor is a popular low-latency anonymity network. However, Tor does not protect against the exploitation of an insecure application to reveal the IP address of, or trace, a TCP stream. In addition, because of the linkability of Tor streams sent together over a single circuit, tracing one stream sent over a circuit traces them all. Surprisingly, it is unknown whether this linkability allows in practice to trace a significant number of streams originating from secure (i.e., proxied) applications.&lt;/p&gt;
+&lt;p&gt;In this paper, we show that linkability allows us to trace 193% of additional streams, including 27% of HTTP streams possibly originating from “secure” browsers. In particular, we traced 9% of all Tor streams carried by our instrumented exit nodes. Using BitTorrent as the insecure application, we design two attacks tracing BitTorrent users on Tor. We run these attacks in the wild for 23 days and reveal 10,000 IP addresses of Tor users. Using these IP addresses, we then profile not only the BitTorrent downloads but also the websites visited per country of origin of Tor users. We show that BitTorrent users on Tor are over-represented in some countries as compared to BitTorrent users outside of Tor. By analyzing the type of content downloaded, we then explain the observed behaviors by the higher concentration of pornographic content downloaded at the scale of a country. Finally, we present results suggesting the existence of an underground BitTorrent ecosystem on Tor.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Sun, 27 Mar 2011 14:03:08 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">39 at https://www.nm7.org</guid>
+  </item>
+  <item>
+    <title>Yum remove Enlightenment</title>
+    <link>https://www.nm7.org/yum-remove-enlightenment</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;Here&#039;s a one-liner that will save some time. Uses sed, uniq, sort and of course regular expressions.&lt;/p&gt;
+&lt;pre&gt;yum remove `yum search enlightenment | awk &#039;{print $1}&#039; | sed -e &#039;s/.\(x86_64\|i686\|noarch\)//&#039; -e &#039;/^[:=]/d&#039; -e &#039;s/\(Loaded\|font-manager\)//&#039; | uniq | sort`&lt;/pre&gt;&lt;h4&gt;What does it do?&lt;/h4&gt;
+&lt;p&gt;It uses yum to remove all packages that are related to the &lt;a href=&quot;http://www.enlightenment.org/&quot;&gt;Enlightenment&lt;/a&gt; Window Manager.&lt;/p&gt;
+&lt;p&gt;It does this by searching the package lists for the word enlightenment, prints just the first word, filters out unnecessary stuff, lists only the unique ones and finally sorts the result. This resulting list of packages is then passed on to yum to remove.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/linux&quot;&gt;Linux&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Sat, 19 Mar 2011 00:14:33 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">38 at https://www.nm7.org</guid>
+  </item>
+  <item>
+    <title>Misusing HTTP Status codes</title>
+    <link>https://www.nm7.org/misusing-http-status-codes</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;This is not what HTTP Status codes are intended for:&lt;br /&gt;&lt;a href=&quot;https://grepular.com/Abusing_HTTP_Status_Codes_to_Expose_Private_Information&quot;&gt;https://grepular.com/Abusing_HTTP_Status_Codes_to_Expose_Private_Information&lt;/a&gt;
+&lt;/p&gt;&lt;p&gt;Useful, but creepy!
+&lt;/p&gt;&lt;p&gt;Credit: Bruce Schneier (&lt;a href=&quot;http://www.schneier.com/blog/archives/2011/02/hacking_http_st.html&quot;&gt;http://www.schneier.com/blog/archives/2011/02/hacking_http_st.html&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/tags&quot;&gt;security&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Wed, 02 Feb 2011 22:08:00 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">37 at https://www.nm7.org</guid>
+  </item>
+  <item>
+    <title>The 15 min exercise system</title>
+    <link>https://www.nm7.org/15-min-exercise-system</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;In a world of &lt;a href=&quot;https://secure.wikimedia.org/wikipedia/en/wiki/Arnold_schwarzenegger&quot;&gt;Arnold Schwarzenegger&lt;/a&gt;&#039;s and &lt;a href=&quot;https://secure.wikimedia.org/wikipedia/en/wiki/Sylvester_Stallone&quot;&gt;Sylvester Stallone&lt;/a&gt;&#039;s, people like Franz Kafka or J.P. Müller stand out.&lt;/p&gt;
+&lt;p&gt;My take: Müller&#039;s system combined with yoga and meditation might be the perfect exercise system.&lt;/p&gt;
+&lt;p&gt;From the article:&lt;br /&gt;
+The exercise guide, which promised that just &quot;15 minutes a day&quot; of prescribed* exercise would make &quot;weaklings&quot; into strong men (and women)&lt;br /&gt;
+[...]&lt;br /&gt;
+Müller wasn&#039;t interested in building muscle mass through dumbbells.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href=&quot;http://www.slate.com/id/2281699/&quot;&gt;Franz Kafka, J.P. Müller: The exercise system that swept Europe in the early 1900s.&lt;/a&gt; (Sarah Wildman - Slate Magazine)&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Tue, 25 Jan 2011 04:27:35 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">36 at https://www.nm7.org</guid>
+  </item>
+  <item>
+    <title>The future is now!</title>
+    <link>https://www.nm7.org/future-now</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;div align=&quot;center&quot;&gt;&lt;img alt=&quot;I&#039;ve seen the future. It&#039;s in my browser!&quot; src=&quot;http://nm7.org/sites/default/files/images/HTML5_sticker.png&quot; height=&quot;300px&quot; style=&quot;float:none&quot; /&gt;&lt;/div&gt;
+&lt;p&gt;Today the W3C released an &lt;a href=&quot;http://www.w3.org/html/logo/&quot;&gt;official HTML5 logo&lt;/a&gt;. Its a call to rally forward the advancement of the HTML5 spec.&lt;/p&gt;
+&lt;p&gt;Just as quickly, the awesome designer Jen Simmons branded the &lt;a href=&quot;http://jensimmons.com/news/html5-logo-drupal&quot;&gt;HTML5 Logo for Drupal&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Those are the shiny new logo&#039;s you see on top.&lt;/p&gt;
+&lt;p&gt;I&#039;m using the &lt;a href=&quot;http://drupal.org/project/sky&quot;&gt;Sky&lt;/a&gt; Theme, which uses HTML5 and CSS3. It still gives you some ugly code, but it is more or less HTML5 compliant. I&#039;ve made some modifications here and there, mostly to the CSS, but I want to do a complete rewrite that gives pure HTML5. I&#039;ll be working on that shortly. After all this is the future!&lt;/p&gt;
+&lt;p&gt;Btw, both these logo&#039;s are licensed &lt;a href=&quot;http://creativecommons.org/licenses/by/3.0/&quot;&gt;Creative Commons Attribution 3.0&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Wed, 19 Jan 2011 03:01:17 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">35 at https://www.nm7.org</guid>
+  </item>
+  <item>
+    <title>Drupal 7</title>
+    <link>https://www.nm7.org/drupal-7</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;I upgraded the site to Drupal 7. The upgrade was smooth. I had to disable some modules that I used on the old site. I didn&#039;t have much use of them, so might as well keep things simple.&lt;/p&gt;
+&lt;p&gt;Some things still need to be fixed. Like the error reporting and logging. I&#039;ll get around to that eventually.&lt;/p&gt;
+&lt;p&gt;But for now, go Drupal!!&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/drupal&quot;&gt;drupal&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Sun, 16 Jan 2011 21:26:41 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">34 at https://www.nm7.org</guid>
+  </item>
+  <item>
+    <title>Cloud Computing and Free Software</title>
+    <link>https://www.nm7.org/cloud-computing-and-free-software</link>
+    <description>&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;Over at O&#039;Reilly Radar, Andy Oram tackles the possiblities of a free software cloud.&lt;/p&gt;
+&lt;p&gt;I like how he defines &#039;cloud computing&#039; as evolved from the concepts of time sharing and remote backup. &lt;a href=&quot;#cite_note-0&quot; name=&quot;cite_ref-0&quot; id=&quot;cite_ref-0&quot;&gt;[1]&lt;/a&gt; It does make sense.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;cite_ref-0&quot; name=&quot;#cite_note-0&quot; id=&quot;#cite_note-0&quot;&gt;[1]&lt;/a&gt;Oram, Andy (December 15, 2010). &lt;a href=&quot;http://www.webcitation.org/5v6SbZcXU&quot;&gt;Defining clouds, web services, and other remote computing&lt;/a&gt;. O&#039;Reilly Radar. Archived from &lt;a href=&quot;http://radar.oreilly.com/2010/12/what-are-the-chances-for-a-fre-1.html&quot;&gt;the original&lt;/a&gt; on 2010-12-19. Retrieved: 2010-12-19.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Tags:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/tags/open-source&quot;&gt;open source&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;field-item odd&quot;&gt;&lt;a href=&quot;/tags/cloud-computing&quot;&gt;cloud computing&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+     <pubDate>Sun, 19 Dec 2010 23:09:21 +0000</pubDate>
+ <dc:creator>teknikqa</dc:creator>
+ <guid isPermaLink="false">33 at https://www.nm7.org</guid>
+  </item>
+  </channel>
+</rss>
