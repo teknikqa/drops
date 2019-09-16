@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/teknikqa
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.nm7.org
+  * I am teknikqa (https://keybase.io/teknikqa) on keybase.
+  * I have a public key ASDhg4eaQDImsLVSZi1v3UVc_48X7utn1mD_EevMo8HxlAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101e9078c19c08cc09457f96ee14ebff479e9edd8ae607b70c209c225d970f3f6520a",
+      "host": "keybase.io",
+      "kid": "0120e183879a403226b0b552662d6fdd455cff8f17eeeb67d660ff11ebcca3c1f1940a",
+      "uid": "7c56791720028816031901c91b112219",
+      "username": "teknikqa"
+    },
+    "merkle_root": {
+      "ctime": 1568632888,
+      "hash": "2b5c7063fd4656f6802c761d8511a64d5a448cec2773baa844022adaa35250c1f2ecca0a0d8655447e56af94fb4d60922e53baae52b9b392840fd11669065e94",
+      "hash_meta": "52b16127796775cdf2afc1e2d06197facdabb433172e437385de756e0852677b",
+      "seqno": 7456590
+    },
+    "service": {
+      "entropy": "JTPut4+mzvp1XVX/IiV08KNC",
+      "hostname": "www.nm7.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.4.2"
+  },
+  "ctime": 1568632896,
+  "expire_in": 504576000,
+  "prev": "30696969a49cdb5a9ba6de4e482f570ecd1f9d306dad033743eb5264f27fb1c1",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg4YOHmkAyJrC1UmYtb91FXP+PF+7rZ9Zg/xHrzKPB8ZQKp3BheWxvYWTESpcCFMQgMGlpaaSc21qbpt5OSC9XDs0fnTBtrQM3Q+tSZPJ/scHEIPc7Bs79B2kKVmXYf0INQclOoRFm4lDJMgj9uO48pO/5AgHCo3NpZ8RAeErPOWIp0l9M/Ql0L3QfP2eEmtNhcu3A7kOVZ3WvkNqgiAmRVy2VcFGU+sqiIKN/XO1jJ8fFIv20pjbD8ncpA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIbUoSWtTifs3B9J7eO280XJxHV7IknzGjlMpaxFBh4Fo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/teknikqa
+
+==================================================================
